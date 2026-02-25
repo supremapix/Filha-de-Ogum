@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ALL_LOCATIONS } from '../data/locations';
-import { SEO } from '../components/SEO';
+import { EnhancedSEO } from '../components/EnhancedSEO';
 import { MapPin, Heart, Star, Shield, Zap, MessageCircle, Phone } from 'lucide-react';
 import { motion } from 'motion/react';
 import { FAQAccordion } from '../components/FAQAccordion';
@@ -49,7 +49,7 @@ const LocationPage: React.FC = () => {
 
   return (
     <div className="pb-20">
-      <SEO 
+      <EnhancedSEO 
         title={`Amarração Amorosa em ${location.name} - Filha de Ogum`}
         description={`Precisa de Amarração Amorosa em ${location.name}? Filha de Ogum é especialista em união de casais e alta magia em ${location.name} e todo o Paraná. Sigilo absoluto e resultados.`}
         canonical={`https://www.amarracaoamorosacuritiba.shop/local/${location.id}`}

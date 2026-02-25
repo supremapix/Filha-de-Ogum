@@ -106,6 +106,7 @@ async function startServer() {
         <title>${metadata.title} | Filha de Ogum</title>
         <meta name="description" content="${metadata.description}">
         <link rel="canonical" href="${canonical}">
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
         <meta property="og:title" content="${metadata.title} | Filha de Ogum">
         <meta property="og:description" content="${metadata.description}">
         <meta property="og:url" content="${canonical}">

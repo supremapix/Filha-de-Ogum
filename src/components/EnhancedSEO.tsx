@@ -62,6 +62,7 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />

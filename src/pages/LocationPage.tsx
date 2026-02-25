@@ -56,6 +56,7 @@ const LocationPage: React.FC = () => {
         description={`Precisa de Amarração Amorosa em ${location.name}? Filha de Ogum é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Sigilo absoluto e resultados.`}
         canonical={`https://www.amarracaoamorosacuritiba.shop/local/${location.id}`}
         locationName={location.name}
+        state={location.state}
       />
 
       {/* Hero */}

@@ -6,6 +6,7 @@ interface EnhancedSEOProps {
   description: string;
   canonical: string;
   locationName?: string;
+  state?: 'PR' | 'SC';
   type?: 'website' | 'article' | 'business';
 }
 
@@ -14,6 +15,7 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   description, 
   canonical, 
   locationName,
+  state = 'PR',
   type = 'website'
 }) => {
   const fullTitle = `${title} | Filha de Ogum`;
@@ -63,6 +65,12 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      
+      {/* Geolocation */}
+      <meta name="geo.region" content={`BR-${state}`} />
+      <meta name="geo.placename" content={locationName || "Curitiba"} />
+      <meta name="geo.position" content="-25.4290;-49.2671" />
+      <meta name="ICBM" content="-25.4290, -49.2671" />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />

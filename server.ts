@@ -108,21 +108,74 @@ async function startServer() {
       }
 
       // Inject Meta Tags for SEO (Pre-rendering)
+      const locationMatch = ALL_LOCATIONS.find(l => url.includes(l.id));
+      const locationName = locationMatch ? locationMatch.name : "Curitiba";
+      const stateCode = locationMatch?.state || "PR";
+      
+      const schemaMarkup = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Filha de Ogum - Amarração Amorosa",
+        "image": "https://img.supremamidia.com/suprema-img.png",
+        "@id": "https://www.amarracaoamorosacuritiba.shop",
+        "url": "https://www.amarracaoamorosacuritiba.shop",
+        "telephone": "+5541997317607",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Centro",
+          "addressLocality": locationName,
+          "addressRegion": stateCode,
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -25.4290,
+          "longitude": -49.2671
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "sameAs": [
+          "https://wa.me/5541997317607"
+        ]
+      };
+
       const metaTags = `
         <title>${metadata.title} | Filha de Ogum</title>
         <meta name="description" content="${metadata.description}">
         <link rel="canonical" href="${canonical}">
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        
+        <!-- Geolocation -->
+        <meta name="geo.region" content="BR-${stateCode}">
+        <meta name="geo.placename" content="${locationName}">
+        <meta name="geo.position" content="-25.4290;-49.2671">
+        <meta name="ICBM" content="-25.4290, -49.2671">
+
+        <!-- Open Graph -->
         <meta property="og:title" content="${metadata.title} | Filha de Ogum">
         <meta property="og:description" content="${metadata.description}">
         <meta property="og:url" content="${canonical}">
         <meta property="og:type" content="website">
         <meta property="og:image" content="https://img.supremamidia.com/suprema-img.png">
+        
+        <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="${metadata.title} | Filha de Ogum">
         <meta name="twitter:description" content="${metadata.description}">
         <meta name="twitter:image" content="https://img.supremamidia.com/suprema-img.png">
+        
         <meta name="robots" content="index, follow">
+        
+        <!-- Schema Markup -->
+        <script type="application/ld+json">
+          ${JSON.stringify(schemaMarkup)}
+        </script>
       `;
 
       const html = template.replace(`<!-- SEO_PLACEHOLDER -->`, metaTags);

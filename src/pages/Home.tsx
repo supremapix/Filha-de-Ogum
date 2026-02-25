@@ -37,6 +37,7 @@ const Home: React.FC = () => {
         title="Amarração Amorosa em Curitiba, Paraná e Santa Catarina - Filha de Ogum"
         description="Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Paraná e Santa Catarina. Resultados garantidos e sigilo total. Fale com Filha de Ogum."
         canonical="https://www.amarracaoamorosacuritiba.shop"
+        state="PR"
       />
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center overflow-hidden">

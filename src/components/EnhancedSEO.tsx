@@ -26,6 +26,7 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Filha de Ogum - Alta Magia e Amarração Amorosa",
+    "alternateName": "Suprema Mídia - Consultoria Espiritual",
     "image": logoUrl,
     "@id": siteUrl,
     "url": siteUrl,
@@ -35,7 +36,7 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       "@type": "PostalAddress",
       "streetAddress": "Curitiba",
       "addressLocality": locationName || "Curitiba",
-      "addressRegion": "PR",
+      "addressRegion": state,
       "postalCode": "80000-000",
       "addressCountry": "BR"
     },
@@ -43,6 +44,51 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       "@type": "GeoCoordinates",
       "latitude": -25.4284,
       "longitude": -49.2733
+    },
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": -25.4284,
+        "longitude": -49.2733
+      },
+      "geoRadius": "50000"
+    },
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "Paraná"
+      },
+      {
+        "@type": "State",
+        "name": "Santa Catarina"
+      },
+      {
+        "@type": "City",
+        "name": locationName || "Curitiba"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços Espirituais Suprema Mídia",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Amarração Amorosa",
+            "description": "Trabalhos de união de casais e reconciliação amorosa com alta magia."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Limpeza Espiritual",
+            "description": "Afastamento de energias negativas e abertura de caminhos."
+          }
+        }
+      ]
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",

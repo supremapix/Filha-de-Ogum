@@ -160,10 +160,12 @@ async function startServer() {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Filha de Ogum - Amarração Amorosa",
+        "alternateName": "Suprema Mídia - Consultoria Espiritual",
         "image": "https://img.supremamidia.com/suprema-img.png",
         "@id": "https://www.amarracaoamorosacuritiba.shop",
         "url": "https://www.amarracaoamorosacuritiba.shop",
         "telephone": "+5541997317607",
+        "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Centro",
@@ -175,6 +177,51 @@ async function startServer() {
           "@type": "GeoCoordinates",
           "latitude": -25.4290,
           "longitude": -49.2671
+        },
+        "serviceArea": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": -25.4290,
+            "longitude": -49.2671
+          },
+          "geoRadius": "50000"
+        },
+        "areaServed": [
+          {
+            "@type": "State",
+            "name": "Paraná"
+          },
+          {
+            "@type": "State",
+            "name": "Santa Catarina"
+          },
+          {
+            "@type": "City",
+            "name": locationName
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços Espirituais Suprema Mídia",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Amarração Amorosa",
+                "description": "Trabalhos de união de casais e reconciliação amorosa com alta magia."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Limpeza Espiritual",
+                "description": "Afastamento de energias negativas e abertura de caminhos."
+              }
+            }
+          ]
         },
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",

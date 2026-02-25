@@ -58,8 +58,12 @@ const LocationPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-stone-900 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img src="https://img.supremamidia.com/suprema-img.png" alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 opacity-30">
+          <img 
+            src="https://claudia.abril.com.br/wp-content/uploads/2024/12/amarracoes-amorosas-porque-nao-fazer.jpg?quality=70&strip=info&w=1280&h=720&crop=1" 
+            alt="" 
+            className="w-full h-full object-cover" 
+          />
         </div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <Link to="/" className="text-red-500 text-sm font-bold uppercase tracking-widest mb-4 inline-block hover:text-red-400 transition-colors">

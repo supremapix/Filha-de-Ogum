@@ -109,15 +109,22 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-stone-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+          <div className="pt-8 border-t border-stone-800 flex flex-col md:flex-row items-center justify-between gap-6 text-xs">
             <p>© 2026 Amarração Amorosa Curitiba. Todos os direitos reservados.</p>
-            <div className="flex items-center gap-2">
-              <span>Desenvolvido</span>
-              <Heart size={16} className="text-red-600 fill-red-600 animate-heartbeat" />
-              <span>por</span>
-              <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" className="text-white hover:underline font-bold">
-                Suprema Sites Express
-              </a>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <span>Desenvolvido</span>
+                <Heart size={16} className="text-red-600 fill-red-600 animate-heartbeat" />
+                <span>por</span>
+                <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" className="text-white hover:underline font-bold">
+                  Suprema Sites Express
+                </a>
+              </div>
+              <img 
+                src="https://img.supremamidia.com/suprema-img.png" 
+                alt="Suprema Mídia" 
+                className="h-8 w-auto grayscale hover:grayscale-0 transition-all"
+              />
             </div>
           </div>
         </div>

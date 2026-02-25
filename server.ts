@@ -241,6 +241,7 @@ async function startServer() {
         <meta name="description" content="${metadata.description}">
         <link rel="canonical" href="${canonical}">
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <meta name="google-site-verification" content="5XMamsK6WwP7Yfw9IBCR0pdnOtaRh4822VJm5zDg1So" />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
         
         <!-- Geolocation -->

@@ -65,6 +65,7 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
       
       {/* Geolocation */}
       <meta name="geo.region" content={`BR-${state}`} />

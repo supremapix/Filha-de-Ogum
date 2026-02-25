@@ -93,6 +93,38 @@ async function startServer() {
     app.use(express.static(path.join(__dirname, "dist"), { index: false }));
   }
 
+  app.get("/sitemap.xml", (req, res) => {
+    const baseUrl = "https://www.amarracaoamorosacuritiba.shop";
+    const locations = ALL_LOCATIONS;
+    
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${baseUrl}/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/sitemap</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>`;
+
+    locations.forEach(loc => {
+      xml += `
+  <url>
+    <loc>${baseUrl}/local/${loc.id}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>`;
+    });
+
+    xml += "\n</urlset>";
+    
+    res.header("Content-Type", "application/xml");
+    res.send(xml);
+  });
+
   app.get("*", async (req, res) => {
     const url = req.originalUrl;
     const metadata = getMetadata(url);
@@ -150,6 +182,7 @@ async function startServer() {
         <meta name="description" content="${metadata.description}">
         <link rel="canonical" href="${canonical}">
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
         
         <!-- Geolocation -->
         <meta name="geo.region" content="BR-${stateCode}">

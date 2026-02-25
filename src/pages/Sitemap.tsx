@@ -1,0 +1,63 @@
+import React from 'react';
+import { ALL_LOCATIONS } from '../data/locations';
+import { Link } from 'react-router-dom';
+import { MapPin } from 'lucide-react';
+
+const Sitemap: React.FC = () => {
+  const neighborhoods = ALL_LOCATIONS.filter(l => l.type === 'bairro');
+  const cities = ALL_LOCATIONS.filter(l => l.type === 'cidade');
+
+  return (
+    <div className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+        <h1 className="text-4xl font-bold mb-12 border-b pb-6">Mapa do Site</h1>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div>
+            <h2 className="text-2xl font-bold mb-8 flex items-center gap-2 text-red-700">
+              <MapPin /> Bairros de Curitiba
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {neighborhoods.map(loc => (
+                <Link 
+                  key={loc.id} 
+                  to={`/local/${loc.id}`}
+                  className="text-stone-600 hover:text-red-700 text-sm py-1 transition-colors"
+                >
+                  Amarração Amorosa em {loc.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold mb-8 flex items-center gap-2 text-red-700">
+              <MapPin /> Cidades da Região Metropolitana
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {cities.map(loc => (
+                <Link 
+                  key={loc.id} 
+                  to={`/local/${loc.id}`}
+                  className="text-stone-600 hover:text-red-700 text-sm py-1 transition-colors"
+                >
+                  Amarração Amorosa em {loc.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-20 pt-12 border-t border-stone-100">
+          <h2 className="text-2xl font-bold mb-6">Páginas Principais</h2>
+          <ul className="space-y-4">
+            <li><Link to="/" className="text-red-700 font-bold hover:underline">Página Inicial</Link></li>
+            <li><a href="https://wa.me/5541997317607" className="text-stone-600 hover:text-red-700 transition-colors">Atendimento WhatsApp: +55 41 99731-7607</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Sitemap;

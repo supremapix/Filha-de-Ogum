@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+
+  @keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes scroll-vertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-scroll-vertical {
+  animation: scroll-vertical 60s linear infinite;
+}
+
+.animate-scroll-vertical:hover {
+  animation-play-state: paused;
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.premium-heart {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ff0000 0%, #8b0000 100%);
+  transform: rotate(-45deg);
+  box-shadow: 0 0 20px rgba(142, 14, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.premium-heart::before,
+.premium-heart::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.premium-heart::before {
+  top: -20px;
+  left: 0;
+}
+
+.premium-heart::after {
+  top: 0;
+  left: 20px;
+}
+
+.premium-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%) rotate(45deg);
+  animation: shine 3s infinite;
+  z-index: 10;
+}
+
+@layer base {
+  body {
+    @apply bg-stone-50 text-stone-900;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.gold-gradient {
+  @apply bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-200;
+}
+
+.dark-gradient {
+  @apply bg-gradient-to-b from-stone-900 to-black;
+}

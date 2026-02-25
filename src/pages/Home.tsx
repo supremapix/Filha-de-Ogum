@@ -34,8 +34,8 @@ const Home: React.FC = () => {
   return (
     <div className="pb-20">
       <EnhancedSEO 
-        title="Amarração Amorosa em Curitiba e Paraná - Filha de Ogum"
-        description="Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia em Curitiba e todo o Paraná. Resultados garantidos e sigilo total. Fale com Filha de Ogum."
+        title="Amarração Amorosa em Curitiba, Paraná e Santa Catarina - Filha de Ogum"
+        description="Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Paraná e Santa Catarina. Resultados garantidos e sigilo total. Fale com Filha de Ogum."
         canonical="https://www.amarracaoamorosacuritiba.shop"
       />
       {/* Hero Section */}
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <img 
             src="https://claudia.abril.com.br/wp-content/uploads/2024/12/amarracoes-amorosas-porque-nao-fazer.jpg?quality=70&strip=info&w=1280&h=720&crop=1" 
-            alt="Amarração Amorosa Curitiba" 
+            alt="Amarração Amorosa Curitiba, Paraná e Santa Catarina" 
             className="w-full h-full object-cover opacity-50"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-stone-900 via-stone-900/80 to-transparent"></div>
@@ -56,14 +56,14 @@ const Home: React.FC = () => {
             className="max-w-2xl"
           >
             <span className="inline-block px-4 py-1 bg-red-700 text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full mb-6">
-              Especialista em Reconciliação
+              Especialista em Reconciliação no Sul do Brasil
             </span>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Recupere seu Amor com <span className="text-red-500">Filha de Ogum</span>
             </h1>
             <p className="text-xl text-stone-300 mb-8 leading-relaxed">
               Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada. 
-              Atendimento discreto e personalizado para quem busca reconciliação amorosa.
+              Atendimento discreto e personalizado em todo o Paraná e Santa Catarina.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="https://wa.me/5541997317607" className="px-10 py-5 bg-red-700 text-white text-xl font-black rounded-full hover:bg-red-800 transition-all flex items-center gap-3 shadow-2xl shadow-red-900/40 border-2 border-red-500">
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: <Star className="text-amber-500" />, title: "Experiência", desc: "Mais de 20 anos unindo casais e restaurando famílias em Curitiba." },
+              { icon: <Star className="text-amber-500" />, title: "Experiência", desc: "Mais de 20 anos unindo casais e restaurando famílias no PR e SC." },
               { icon: <ShieldCheck className="text-blue-500" />, title: "Sigilo Total", desc: "Seu caso é tratado com absoluta discrição e respeito à sua privacidade." },
               { icon: <Zap className="text-red-500" />, title: "Rapidez", desc: "Métodos espirituais eficientes com resultados que você pode sentir." }
             ].map((item, i) => (
@@ -104,12 +104,12 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-8 bg-stone-900 text-white rounded-3xl border border-stone-800">
             <p className="text-lg leading-relaxed italic">
-              "Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada. Atendimento discreto e personalizado para quem busca reconciliação amorosa com Filha de Ogum."
+              "Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada. Atendimento discreto e personalizado para quem busca reconciliação amorosa com Filha de Ogum no Paraná e Santa Catarina."
             </p>
           </div>
           <div className="p-8 bg-red-900 text-white rounded-3xl border border-red-800">
             <p className="text-lg leading-relaxed italic">
-              "Método espiritual voltado para harmonização de relacionamentos e restauração de laços sentimentais. Ideal para quem deseja recuperar o amor com acompanhamento profissional e sigilo com Filha de Ogum."
+              "Método espiritual voltado para harmonização de relacionamentos e restauração de laços sentimentais. Ideal para quem deseja recuperar o amor com acompanhamento profissional e sigilo com Filha de Ogum em todo o Sul."
             </p>
           </div>
         </div>
@@ -137,12 +137,12 @@ const Home: React.FC = () => {
       <section id="locais" className="py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-12">
           <h2 className="text-4xl font-bold text-center">Locais de Atendimento</h2>
-          <p className="text-stone-500 text-center mt-2">Atendimento especializado em Curitiba, Região Metropolitana e todo o Estado do Paraná.</p>
+          <p className="text-stone-500 text-center mt-2">Atendimento especializado no Paraná e Santa Catarina.</p>
         </div>
         
         <div className="relative flex overflow-x-hidden border-y border-stone-100 py-10 bg-stone-50">
           <div className="animate-marquee flex gap-8">
-            {[...ALL_LOCATIONS.slice(0, 50), ...ALL_LOCATIONS.slice(0, 50)].map((loc, i) => (
+            {[...ALL_LOCATIONS.slice(0, 100), ...ALL_LOCATIONS.slice(0, 100)].map((loc, i) => (
               <Link 
                 key={i} 
                 to={`/local/${loc.id}`}
@@ -151,7 +151,10 @@ const Home: React.FC = () => {
                 <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
                   <MapPin size={20} />
                 </div>
-                <span className="font-bold text-lg whitespace-nowrap">{loc.name}</span>
+                <div className="flex flex-col">
+                  <span className="font-bold text-lg whitespace-nowrap">{loc.name}</span>
+                  <span className="text-xs text-stone-400 uppercase font-bold">{loc.state}</span>
+                </div>
               </Link>
             ))}
           </div>
@@ -163,7 +166,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-red-600 font-bold uppercase tracking-widest text-sm">Cobertura Estadual</span>
-            <h2 className="text-5xl font-black mt-2 mb-4">Paraná Estado</h2>
+            <h2 className="text-5xl font-black mt-2 mb-4">Paraná</h2>
             <p className="text-stone-600 text-xl max-w-3xl mx-auto">
               Atendimento especializado em todo o estado do Paraná. Unindo corações de Curitiba ao interior com a força da Alta Magia.
             </p>
@@ -175,13 +178,50 @@ const Home: React.FC = () => {
                 <MapPin size={32} />
               </div>
               <div>
-                <h3 className="text-3xl font-black">Cidades Atendidas</h3>
+                <h3 className="text-3xl font-black">Cidades no Paraná</h3>
                 <p className="text-stone-500">Encontre sua cidade e recupere seu amor agora.</p>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
-              {ALL_LOCATIONS.filter(l => l.type === 'cidade').map((loc, i) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar">
+              {ALL_LOCATIONS.filter(l => l.type === 'cidade' && l.state === 'PR').map((loc, i) => (
+                <Link 
+                  key={i} 
+                  to={`/local/${loc.id}`}
+                  className="p-3 text-sm font-bold text-stone-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-all border border-transparent hover:border-red-100"
+                >
+                  {loc.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Santa Catarina State Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-red-600 font-bold uppercase tracking-widest text-sm">Expansão Sul</span>
+            <h2 className="text-5xl font-black mt-2 mb-4">Santa Catarina</h2>
+            <p className="text-stone-600 text-xl max-w-3xl mx-auto">
+              Agora atendendo todas as cidades de Santa Catarina. A força de Filha de Ogum unindo casais de Florianópolis a Joinville.
+            </p>
+          </div>
+
+          <div className="bg-stone-50 p-10 rounded-[3rem] shadow-xl border border-stone-100">
+            <div className="flex items-center gap-4 mb-10 pb-6 border-b border-stone-100">
+              <div className="w-16 h-16 bg-red-700 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                <MapPin size={32} />
+              </div>
+              <div>
+                <h3 className="text-3xl font-black">Cidades em Santa Catarina</h3>
+                <p className="text-stone-500">Sua felicidade amorosa em SC começa aqui.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar">
+              {ALL_LOCATIONS.filter(l => l.type === 'cidade' && l.state === 'SC').map((loc, i) => (
                 <Link 
                   key={i} 
                   to={`/local/${loc.id}`}

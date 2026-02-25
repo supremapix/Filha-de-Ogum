@@ -15,6 +15,8 @@ const LocationPage: React.FC = () => {
     return <Navigate to="/" />;
   }
 
+  const stateName = location.state === 'PR' ? 'Paraná' : 'Santa Catarina';
+
   const searchPhrases = [
     "Amarração amorosa confiável",
     "Amarração amorosa verdadeira funciona",
@@ -51,7 +53,7 @@ const LocationPage: React.FC = () => {
     <div className="pb-20">
       <EnhancedSEO 
         title={`Amarração Amorosa em ${location.name} - Filha de Ogum`}
-        description={`Precisa de Amarração Amorosa em ${location.name}? Filha de Ogum é especialista em união de casais e alta magia em ${location.name} e todo o Paraná. Sigilo absoluto e resultados.`}
+        description={`Precisa de Amarração Amorosa em ${location.name}? Filha de Ogum é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Sigilo absoluto e resultados.`}
         canonical={`https://www.amarracaoamorosacuritiba.shop/local/${location.id}`}
         locationName={location.name}
       />
@@ -67,7 +69,7 @@ const LocationPage: React.FC = () => {
         </div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <Link to="/" className="text-red-500 text-sm font-bold uppercase tracking-widest mb-4 inline-block hover:text-red-400 transition-colors">
-            ← Voltar para Curitiba
+            ← Voltar para Início
           </Link>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Amarração Amorosa em <span className="text-red-500">{location.name}</span></h1>
           <p className="text-xl text-stone-400 max-w-3xl leading-relaxed">

@@ -16,7 +16,7 @@ export const SEO: React.FC<SEOProps> = ({ title, description, canonical, locatio
     "image": "https://img.supremamidia.com/suprema-img.png",
     "@id": "",
     "url": canonical,
-    "telephone": "+55 41 9731-7607",
+    "telephone": "+55 41 99731-7607",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Curitiba",

@@ -131,12 +131,12 @@ const Home: React.FC = () => {
       <section id="locais" className="py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-12">
           <h2 className="text-4xl font-bold text-center">Locais de Atendimento</h2>
-          <p className="text-stone-500 text-center mt-2">Atendemos em todos os bairros de Curitiba e cidades da Região Metropolitana.</p>
+          <p className="text-stone-500 text-center mt-2">Atendimento especializado em Curitiba, Região Metropolitana e todo o Estado do Paraná.</p>
         </div>
         
         <div className="relative flex overflow-x-hidden border-y border-stone-100 py-10 bg-stone-50">
           <div className="animate-marquee flex gap-8">
-            {[...ALL_LOCATIONS, ...ALL_LOCATIONS].map((loc, i) => (
+            {[...ALL_LOCATIONS.slice(0, 50), ...ALL_LOCATIONS.slice(0, 50)].map((loc, i) => (
               <Link 
                 key={i} 
                 to={`/local/${loc.id}`}
@@ -148,6 +148,43 @@ const Home: React.FC = () => {
                 <span className="font-bold text-lg whitespace-nowrap">{loc.name}</span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Paraná State Section */}
+      <section className="py-20 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-red-600 font-bold uppercase tracking-widest text-sm">Cobertura Estadual</span>
+            <h2 className="text-5xl font-black mt-2 mb-4">Paraná Estado</h2>
+            <p className="text-stone-600 text-xl max-w-3xl mx-auto">
+              Atendimento especializado em todo o estado do Paraná. Unindo corações de Curitiba ao interior com a força da Alta Magia.
+            </p>
+          </div>
+
+          <div className="bg-white p-10 rounded-[3rem] shadow-xl border border-stone-100">
+            <div className="flex items-center gap-4 mb-10 pb-6 border-b border-stone-100">
+              <div className="w-16 h-16 bg-red-700 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                <MapPin size={32} />
+              </div>
+              <div>
+                <h3 className="text-3xl font-black">Cidades Atendidas</h3>
+                <p className="text-stone-500">Encontre sua cidade e recupere seu amor agora.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+              {ALL_LOCATIONS.filter(l => l.type === 'cidade').map((loc, i) => (
+                <Link 
+                  key={i} 
+                  to={`/local/${loc.id}`}
+                  className="p-3 text-sm font-bold text-stone-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-all border border-transparent hover:border-red-100"
+                >
+                  {loc.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

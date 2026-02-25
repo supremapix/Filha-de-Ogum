@@ -60,7 +60,7 @@ export const ReviewsScroll: React.FC = () => {
                     </div>
                   </div>
                   <div className="ml-auto">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_Maps_icon_%282020%29.svg/1024px-Google_Maps_icon_%282020%29.svg.png" alt="Google Maps" className="w-6 h-6" />
+                    <img src="https://agenciapnz.com/wp-content/uploads/Logo-Google-G.png" alt="Google" className="w-6 h-6 object-contain" />
                   </div>
                 </div>
                 <p className="text-stone-700 italic">"{review.text}"</p>

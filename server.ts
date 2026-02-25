@@ -137,8 +137,14 @@ async function startServer() {
     res.send(xml);
   });
 
-  app.get("*", async (req, res) => {
+  app.get("*", async (req, res, next) => {
     const url = req.originalUrl;
+    
+    // Ignore asset requests that might have fallen through
+    if (url.includes('.') && !url.endsWith('.html')) {
+      return next();
+    }
+
     const metadata = getMetadata(url);
     const canonical = `https://www.amarracaoamorosacuritiba.shop${url}`;
 

@@ -2,7 +2,7 @@ export interface Location {
   id: string;
   name: string;
   type: 'bairro' | 'cidade';
-  state?: 'PR' | 'SC';
+  state?: 'PR' | 'SC' | 'RS';
 }
 
 export const NEIGHBORHOODS: string[] = [

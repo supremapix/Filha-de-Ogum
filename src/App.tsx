@@ -11,6 +11,12 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/sobre" element={<Home />} />
+          <Route path="/servicos" element={<Home />} />
+          <Route path="/amarracao-amorosa" element={<Home />} />
+          <Route path="/contato" element={<Home />} />
+          <Route path="/depoimentos" element={<Home />} />
+          <Route path="/agendar" element={<Home />} />
           <Route path="/local/:id" element={<LocationPage />} />
           <Route path="/sitemap" element={<Sitemap />} />
           <Route path="*" element={<NotFound />} />

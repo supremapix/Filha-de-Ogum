@@ -95,27 +95,39 @@ async function startServer() {
 
   app.get("/sitemap.xml", (req, res) => {
     const baseUrl = "https://www.amarracaoamorosacuritiba.shop";
-    const locations = ALL_LOCATIONS;
+    const today = new Date().toISOString().split('T')[0];
     
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${baseUrl}/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/sitemap</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>`;
+    const staticPages = [
+      { url: "/", priority: "1.0", freq: "daily" },
+      { url: "/sobre", priority: "0.7", freq: "monthly" },
+      { url: "/servicos", priority: "0.9", freq: "weekly" },
+      { url: "/amarracao-amorosa", priority: "0.9", freq: "weekly" },
+      { url: "/contato", priority: "0.7", freq: "monthly" },
+      { url: "/depoimentos", priority: "0.8", freq: "weekly" },
+      { url: "/agendar", priority: "0.8", freq: "weekly" },
+      { url: "/sitemap", priority: "0.5", freq: "monthly" },
+    ];
 
-    locations.forEach(loc => {
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
+    staticPages.forEach(page => {
+      xml += `
+  <url>
+    <loc>${baseUrl}${page.url}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${page.freq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`;
+    });
+
+    ALL_LOCATIONS.forEach(loc => {
       xml += `
   <url>
     <loc>${baseUrl}/local/${loc.id}</loc>
+    <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>`;
     });
 

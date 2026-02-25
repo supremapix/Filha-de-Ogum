@@ -5,6 +5,7 @@ import { MapPin, Star, ShieldCheck, Zap, Heart, Search, MessageCircle, ArrowRigh
 import { motion } from 'motion/react';
 import { FAQAccordion } from '../components/FAQAccordion';
 import { ReviewsScroll } from '../components/ReviewsScroll';
+import { SEO } from '../components/SEO';
 
 const Home: React.FC = () => {
   const [searchTerm, setSearchTerm] = React.useState('');
@@ -32,6 +33,11 @@ const Home: React.FC = () => {
 
   return (
     <div className="pb-20">
+      <SEO 
+        title="Amarração Amorosa em Curitiba e Paraná - Filha de Ogum"
+        description="Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia em Curitiba e todo o Paraná. Resultados garantidos e sigilo total. Fale com Filha de Ogum."
+        canonical="https://www.amarracaoamorosacuritiba.shop"
+      />
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">

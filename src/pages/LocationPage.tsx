@@ -51,7 +51,7 @@ const LocationPage: React.FC = () => {
     <div className="pb-20">
       <SEO 
         title={`Amarração Amorosa em ${location.name} - Filha de Ogum`}
-        description={`Especialista em Amarração Amorosa e Trabalhos Espirituais em ${location.name}. Recupere seu amor com quem entende. Atendimento em ${location.name} e região.`}
+        description={`Precisa de Amarração Amorosa em ${location.name}? Filha de Ogum é especialista em união de casais e alta magia em ${location.name} e todo o Paraná. Sigilo absoluto e resultados.`}
         canonical={`https://www.amarracaoamorosacuritiba.shop/local/${location.id}`}
         locationName={location.name}
       />

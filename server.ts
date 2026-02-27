@@ -163,7 +163,8 @@ async function startServer() {
     const url = req.originalUrl;
     
     // Ignore asset requests that might have fallen through
-    if (url.includes('.') && !url.endsWith('.html')) {
+    // This includes common static file extensions
+    if (url.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|otf|map|json)$/) && !url.endsWith('.html')) {
       return next();
     }
 

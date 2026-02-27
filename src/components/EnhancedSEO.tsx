@@ -6,7 +6,7 @@ interface EnhancedSEOProps {
   description: string;
   canonical: string;
   locationName?: string;
-  state?: 'PR' | 'SC';
+  state?: 'PR' | 'SC' | 'RS' | 'GO' | 'DF';
   type?: 'website' | 'article' | 'business';
 }
 
@@ -21,6 +21,14 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   const fullTitle = `${title} | Filha de Ogum`;
   const siteUrl = "https://www.amarracaoamorosacuritiba.shop";
   const logoUrl = "https://img.supremamidia.com/suprema-img.png";
+
+  const stateNames: Record<string, string> = {
+    'PR': 'Paraná',
+    'SC': 'Santa Catarina',
+    'RS': 'Rio Grande do Sul',
+    'GO': 'Goiás',
+    'DF': 'Distrito Federal'
+  };
 
   const schema = {
     "@context": "https://schema.org",
@@ -52,17 +60,14 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
         "latitude": -25.4284,
         "longitude": -49.2733
       },
-      "geoRadius": "50000"
+      "geoRadius": "1000000"
     },
     "areaServed": [
-      {
-        "@type": "State",
-        "name": "Paraná"
-      },
-      {
-        "@type": "State",
-        "name": "Santa Catarina"
-      },
+      { "@type": "State", "name": "Paraná" },
+      { "@type": "State", "name": "Santa Catarina" },
+      { "@type": "State", "name": "Rio Grande do Sul" },
+      { "@type": "State", "name": "Goiás" },
+      { "@type": "State", "name": "Distrito Federal" },
       {
         "@type": "City",
         "name": locationName || "Curitiba"

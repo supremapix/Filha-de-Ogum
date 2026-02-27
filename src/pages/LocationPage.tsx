@@ -7,6 +7,8 @@ import { motion } from 'motion/react';
 import { FAQAccordion } from '../components/FAQAccordion';
 import { ReviewsScroll } from '../components/ReviewsScroll';
 
+import { VideoCTA } from '../components/VideoCTA';
+
 const LocationPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const location = ALL_LOCATIONS.find(loc => loc.id === id);
@@ -15,7 +17,14 @@ const LocationPage: React.FC = () => {
     return <Navigate to="/" />;
   }
 
-  const stateName = location.state === 'PR' ? 'Paraná' : 'Santa Catarina';
+  const stateNames: Record<string, string> = {
+    'PR': 'Paraná',
+    'SC': 'Santa Catarina',
+    'RS': 'Rio Grande do Sul',
+    'GO': 'Goiás',
+    'DF': 'Distrito Federal'
+  };
+  const stateName = stateNames[location.state || 'PR'];
 
   const searchPhrases = [
     "Amarração amorosa confiável",
@@ -79,6 +88,11 @@ const LocationPage: React.FC = () => {
           </p>
         </div>
       </section>
+
+      <VideoCTA 
+        title={`Recupere seu Amor em ${location.name}`}
+        subtitle={`Trabalhos espirituais poderosos em ${location.name} com resultados garantidos e sigilo absoluto. Fale com Filha de Ogum.`}
+      />
 
       {/* Quick Actions */}
       <section className="py-16 bg-white border-b border-stone-100">

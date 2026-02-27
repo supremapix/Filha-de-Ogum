@@ -46,17 +46,32 @@ const CITIES_SC = [
   "Abdon Batista", "Abelardo Luz", "Agrolândia", "Agronômica", "Água Doce", "Águas de Chapecó", "Águas Frias", "Águas Mornas", "Albano Schmidt", "Alfredo Wagner", "Almirante Tamandaré", "Anchieta", "Angelical", "Anitápolis", "Antônio Carlos", "Apiúna", "Arabutã", "Araquari", "Araranguá", "Armazém", "Arroio Trinta", "Arvoredo", "Ascurra", "Atalanta", "Aurora", "Balneário Arroio do Silva", "Balneário Camboriú", "Balneário Barra do Sul", "Balneário Gaivota", "Bambuí", "Bandeirante", "Barra Bonita", "Barra Velha", "Batalha", "Bayerlândia", "Belmonte", "Benedito Novo", "Benjamin Constant", "Bom Jardim da Serra", "Bom Jesus", "Bom Jesus do Oeste", "Bom Retiro", "Bombinhas", "Botuverá", "Braço do Norte", "Braço do Trombudo", "Brunópolis", "Brusque", "Caçador", "Caibi", "Calmon", "Camboriú", "Campo Alegre", "Campo Belo do Sul", "Campo Erê", "Campos Novos", "Canelinha", "Canoinhas", "Capão Alto", "Capinzal", "Capivari de Baixo", "Catanduvas", "Caxambu do Sul", "Celso Ramos", "Cerros", "Chapadão do Lageado", "Chapecó", "Cocal do Sul", "Concordia", "Cordilheira Alta", "Coronel Freitas", "Coronel Martins", "Corupá", "Correia Pinto", "Criciúma", "Cunha Porã", "Cunhataí", "Curitibanos", "Descanso", "Dionísio Cerqueira", "Dona Emma", "Doutor Pedrinho", "Entre Rios", "Ermo", "Erval Velho", "Esmeralda", "Eunápolis", "Faxinal dos Guedes", "Flor do Sertão", "Florianópolis", "Formosa do Sul", "Forquilhinha", "Fraiburgo", "Frei Rogério", "Galvão", "Garopaba", "Garuva", "Gaspar", "Governador Celso Ramos", "Grão-Pará", "Gravatal", "Guabiruba", "Guaraciaba", "Guarujá do Sul", "Guatambú", "Herval d'Occidente", "Ibiam", "Ibirama", "Içara", "Ilhota", "Imaruí", "Imbuia", "Imbituba", "Indaial", "Iomerê", "Ipira", "Iporã do Oeste", "Ipuaçu", "Ipumirim", "Iraceminha", "Irani", "Irati", "Irapé", "Itá", "Itaiópolis", "Itajaí", "Itapema", "Itapiranga", "Itapoá", "Ituporanga", "Jaborá", "Jacinto Machado", "Jaguaruna", "Jaraguá do Sul", "Jardinópolis", "Joaçaba", "Joinville", "José Boiteux", "Jupiá", "Lacerdópolis", "Lages", "Laguna", "Lajeado Grande", "Laurentino", "Lauro Muller", "Lebon Régis", "Leoberto Leal", "Lindóia do Sul", "Longitudinal", "Luiz Alves", "Luzerna", "Macieira", "Mafra", "Major Gercino", "Major Vieira", "Maracajá", "Maravilha", "Marema", "Massaranduba", "Matos Costa", "Meleiro", "Mirim Doce", "Modelo", "Mondaí", "Monte Carlo", "Monte Castelo", "Morro da Fumaça", "Morro Grande", "Navegantes", "Nova Erechim", "Nova Itaberaba", "Nova Trento", "Nova Veneza", "Novo Horizonte", "Orleães", "Ouro", "Ouro Verde", "Paial", "Painel", "Palhoça", "Palmeira", "Palmitos", "Papanduva", "Paraíso", "Passo de Torres", "Passos Maia", "Paulo Lopes", "Pedras Grandes", "Penha", "Peritiba", "Petrolândia", "Balneário Piçarras", "Pinhalzinho", "Pinheiro Preto", "Piratuba", "Planalto Alegre", "Pomerode", "Ponte Alta", "Ponte Alta do Norte", "Ponte Serrada", "Porto Belo", "Porto União", "Pouso Redondo", "Praias", "Presidente Castello Branco", "Presidente Getúlio", "Presidente Nereu", "Príncipes", "Quinta do Imbuial", "Quilombo", "Rancho Queimado", "Rio das Antas", "Rio do Campo", "Rio do Oeste", "Rio do Sul", "Rio dos Cedros", "Rio Fortuna", "Rio Negrinho", "Rio Rufino", "Riqueza", "Rodeio", "Romelândia", "Salete", "Saltinho", "Salto Veloso", "Sangão", "Santa Cecília", "Santa Helena", "Santa Rosa de Lima", "Santa Rosa do Sul", "Santa Terezinha", "Santa Terezinha do Progresso", "Santiago do Sul", "Santo Amaro da Imperatriz", "São Bento do Sul", "São Bernardino", "São Bonifácio", "São Carlos", "São Cristóvão do Sul", "São Domingos", "São Francisco do Sul", "São João Batista", "São João do Itaperiú", "São João do Oeste", "São João do Sul", "São Joaquim", "São José", "São José do Cedro", "São José do Cerrito", "São Lourenço do Oeste", "São Ludgero", "São Martinho", "São Miguel da Boa Vista", "São Miguel do Oeste", "São Pedro de Alcântara", "Saudades", "Schroeder", "Seara", "Sede Alvorada", "Serra Alta", "Siderópolis", "Sombrio", "Sul Brasil", "Taió", "Tangará", "Tigrinhos", "Tijucas", "Timor", "Treviso", "Treze de Maio", "Treze Tílias", "Trombudo Central", "Tubarão", "Tunápolis", "Turvo", "União do Oeste", "Urubici", "Urupema", "Urussanga", "Vargeão", "Vargem", "Vargem Bonita", "Vélez", "Videira", "Vitor Meireles", "Witmarsum", "Xanxerê", "Xavantina", "Xaxim", "Zortéa"
 ];
 
+const CITIES_RS = [
+  "Aceguá", "Água Santa", "Agudo", "Ajuricaba", "Alecrim", "Alegrete", "Alegria", "Almirante Tamandaré do Sul", "Alpestre", "Altahona", "Alto Alegre", "Alto Feliz", "Altores", "Amambai", "Amaral Ferrador", "Ametista do Sul", "André da Rocha", "Anta Gorda", "Antônio Prado", "Arambaré", "Araricá", "Aratiba", "Arroio do Meio", "Arroio do Padre", "Arroio do Sal", "Arroio do Tigre", "Arroio dos Ratos", "Arroio Grande", "Arvorezinha", "Assentamento Agrário Castelhanos", "Augustus de Souza", "Áurea", "Bagé", "Balneário Pinhal", "Barra do Guarita", "Barra do Quaraí", "Barra do Ribeiro", "Barra do Rio Azul", "Barra Funda", "Barracão", "Barão", "Barão de Cotegipe", "Barão do Triunfo", "Barros Cassal", "Benjamin Constant do Sul", "Bento Gonçalves", "Bozano", "Bom Jesus", "Bom Princípio", "Bom Progresso", "Bom Retiro do Sul", "Boqueirão do Leão", "Bossoroca", "Botucatu", "Braga", "Broto Preto", "Cacequi", "Cacique Doble", "Caibaté", "Caiçara", "Camaquã", "Camargo", "Cambará do Sul", "Campestre da Lama", "Campina das Missões", "Campinas do Sul", "Campo Bom", "Campo Novo", "Campos Borges", "Canoas", "Canudos do Vale", "Capão Bonito do Sul", "Capão da Canoa", "Capão do Cipó", "Capão do Leão", "Capivari do Sul", "Caraá", "Carazinho", "Carlos Barbosa", "Casca", "Caseiros", "Catuípe", "Caxias do Sul", "Centenário do Sul", "Cerdeira", "Cerrito", "Cerrito de São Francisco", "Cerro Branco", "Cerro Grande", "Cerro Grande do Sul", "Chapada", "Charqueadas", "Chauí", "Chaves", "Chiapetta", "Chuí", "Chuvisca", "Cidreira", "Ciríaco", "Colinas", "Colorado", "Condor", "Coqueiro Baixo", "Coqueiros do Sul", "Coronel Barros", "Coronel Bicaco", "Coronel João Pessoa", "Coronel Pilar", "Corumbé", "Coxilha", "Crissiumal", "Cristal", "Cristal do Sul", "Cruzaltense", "Cruzeiro do Sul", "David Canabarro", "Derrubadas", "Dezesseis de Novembro", "Dilermando de Aguiar", "Dois Irmãos", "Dois Lajeados", "Dom Feliciano", "Dom Pedrito", "Dom Pedro de Alcântara", "Dona Francisca", "Doutor Maurício Cardoso", "Doutor Ricardo", "Echarpe", "Eckel", "Encruzilhada do Sul", "Engenho Velho", "Entre Rios do Sul", "Entre-Ijuís", "Erebango", "Espumoso", "Esperança do Sul", "Espigão Alto", "Estação", "Estância Velha", "Esteio", "Estrela", "Estrela Velha", "Taquara", "Tavares", "Tenente Portela", "Terra de Areia", "Teutônia", "Tio Hugo", "Tiradentes do Sul", "Torres", "Tramandaí", "Travesseiro", "Três Arroios", "Três Cachoeiras", "Três Coroas", "Três de Maio", "Três Forquilhas", "Três Palmeiras", "Três Passos", "Triunfo", "Tunas", "Tupanciretã", "Tupandi", "Tuparendi", "Turuçu", "Ubiretama", "Unistalda", "Uruguaiana", "Vacaria", "Vale do Sol", "Vale Real", "Vale Verde", "Vanini", "Venâncio Aires", "Vera Cruz", "Veranópolis", "Viamão", "Vicente Dutra", "Victor Graeff", "Vila Flores", "Vila Lângaro", "Vila Maria", "Vila Nova do Sul", "Vista Alegre", "Vista Alegre do Prata", "Vista Gaúcha", "Vitória das Missões", "Westfalia", "Wiota", "Xangri-lá"
+];
+
+const CITIES_GO = [
+  "Abadia de Goiás", "Abadiânia", "Acreúna", "Adelandia", "Água Fria de Goiás", "Água Limpa", "Águas Lindas de Goiás", "Alexânia", "Aloândia", "Alô Brasil", "Alto Horizonte", "Alto Paraíso de Goiás", "Alvorada do Norte", "Amaralina", "Americano do Brasil", "Amorinópolis", "Amorrantina", "Anápolis", "Anhanguera", "Anicuns", "Aparecida de Goiânia", "Aparecida do Rio Doc", "Aporé", "Aragarças", "Araguaína", "Araguapaz", "Arenópolis", "Aruanã", "Aurilândia", "Avelinópolis", "Baliza", "Barro Alto", "Barra do Garças", "Barro de Santa Luzia", "Barra do São João", "Barra Longa", "Barreiras do Oeste", "Barro Preto", "Bela Vista de Goiás", "Bom Jardim de Goiás", "Bom Jesus de Goiás", "Bonfinópolis", "Bonópolis", "Brazabrantes", "Britânia", "Buritinópolis", "Buru", "Cachoeira Alta", "Cachoeira de Goiás", "Cachoeira Dourada", "Caçu", "Caiapônia", "Caiçara", "Caldas Novas", "Caldazinha", "Campestre de Goiás", "Campinaçu", "Campinorte", "Campo Alegre de Goiás", "Campo Limpo de Goiás", "Campos Belos", "Campos Verdes", "Carmo do Rio Verde", "Castelândia", "Catalão", "Caturaí", "Cavalcante", "Ceres", "Cezarina", "Chapadão do Céu", "Cidade Ocidental", "Cocalzinho de Goiás", "Colinas do Sul", "Córrego do Ouro", "Corumbá de Goiás", "Corumbaíba", "Cristalina", "Cristianópolis", "Crixás", "Cromínia", "Cumari", "Damianópolis", "Damolândia", "Davinópolis", "Diorama", "Divinópolis de Goiás", "Doverlândia", "Edealina", "Edéia", "Estrela do Norte", "Faina", "Fazenda Nova", "Firminópolis", "Flores de Goiás", "Formosa", "Formoso", "Goiandira", "Goianésia", "Goianésia do Pará", "Goianira", "Goiás", "Goianápolis", "Gombi", "Gouvelândia", "Guapó", "Guarani de Goiás", "Guarinos", "Heitorabai", "Hidrolândia", "Hidrolina", "Iaciara", "Inaciolândia", "Indiara", "Inhumas", "Ipameri", "Ipiranga de Goiás", "Iporá", "Israelândia", "Ithumirim", "Itumbiara", "Ivolândia", "Jandaia", "Jaraguá", "Jataí", "Jaupaci", "Jesúpolis", "Joviânia", "Jussara", "Lagoa Santa", "Leal Moreira", "Luziânia", "Mairipotaba", "Mangaratiba", "Mantena", "Matrinchã", "Maurilândia", "Mimoso de Goiás", "Minaçu", "Mineiros", "Moiporá", "Monte Alegre de Goiás", "Montes Claros de Goiás", "Montividiu", "Montividiu do Norte", "Morrinhos", "Morro Agudo de Goiás", "Mossâmedes", "Mozarlândia", "Mundo Novo", "Mutunópolis", "Nazário", "Nerópolis", "Niquelândia", "Nova América", "Nova Aurora", "Nova Crixás", "Nova Glória", "Nova Iguaçu de Goiás", "Nova Roma", "Nova Veneza", "Novo Brasil", "Novo Gama", "Novo Planalto", "Orizona", "Ouro Verde de Goiás", "Ouvidor", "Padre Bernardo", "Palestina de Goiás", "Palmeiras de Goiás", "Palmelo", "Palmas de Monte Alto", "Paraúna", "Perolândia", "Petrolina de Goiás", "Pilar de Goiás", "Pirenópolis", "Pires do Rio", "Planaltina", "Pontalina", "Porangatu", "Porteirão", "Porto Alegre do Norte", "Porto Nacional", "Porteirinha de Goiás", "Posse", "Professor Jamil", "Quirinópolis", "Rialma", "Rianápolis", "Rio Quente", "Rio Verde", "Rubiataba", "Sanclerlândia", "Santa Bárbara de Goiás", "Santa Cruz de Goiás", "Santa Fé de Goiás", "Santa Helena de Goiás", "Santa Isabel", "Santa Rita do Araguaia", "Santa Rita do Novo Destino", "Santa Rosa de Goiás", "Santa Tereza de Goiás", "Santa Terezinha de Goiás", "Santo Antônio da Barra", "Santo Antônio de Goiás", "Santo Antônio do Descoberto", "São Domingos", "São Francisco de Goiás", "São João da Paraúna", "São João d'Aliança", "São Luís de Montes Belos", "São Miguel do Araguaia", "São Miguel do Passa Quatro", "São Patrício", "São Simão", "Senador Canedo", "Serranópolis", "Silvânia", "Simolândia", "Sítio d'Abadia", "Taquaral de Goiás", "Teresina de Goiás", "Terezópolis de Goiás", "Três Ranchos", "Trindade", "Trombas", "Turvânia", "Turvelândia", "Uirapuru", "Uruaçu", "Uruana", "Urutaí", "Valparaíso de Goiás", "Varjão", "Vianópolis", "Vicentinópolis", "Vila Boa", "Vila Propício"
+];
+
+const CITIES_DF = [
+  "Brasília"
+];
+
 const ALL_LOCATIONS = [
   ...NEIGHBORHOODS.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'bairro', state: 'PR' })),
   ...CITIES_PR.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'cidade', state: 'PR' })),
-  ...CITIES_SC.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'cidade', state: 'SC' }))
+  ...CITIES_SC.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'cidade', state: 'SC' })),
+  ...CITIES_RS.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'cidade', state: 'RS' })),
+  ...CITIES_GO.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'cidade', state: 'GO' })),
+  ...CITIES_DF.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'cidade', state: 'DF' }))
 ];
 
 function getMetadata(urlPath: string) {
   if (urlPath === "/" || urlPath === "") {
     return {
-      title: "Amarração Amorosa em Curitiba, Paraná e Santa Catarina - Filha de Ogum",
-      description: "Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Paraná e Santa Catarina. Resultados garantidos e sigilo total. Fale com Filha de Ogum."
+      title: "Amarração Amorosa em Curitiba, Paraná, Santa Catarina, Rio Grande do Sul e Goiás - Filha de Ogum",
+      description: "Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Sul e Centro-Oeste. Resultados garantidos e sigilo total. Fale com Filha de Ogum."
     };
   }
 
@@ -64,7 +79,14 @@ function getMetadata(urlPath: string) {
     const id = urlPath.replace("/local/", "");
     const location = ALL_LOCATIONS.find(l => l.id === id);
     if (location) {
-      const stateName = location.state === 'PR' ? 'Paraná' : 'Santa Catarina';
+      const stateNames: Record<string, string> = {
+        'PR': 'Paraná',
+        'SC': 'Santa Catarina',
+        'RS': 'Rio Grande do Sul',
+        'GO': 'Goiás',
+        'DF': 'Distrito Federal'
+      };
+      const stateName = stateNames[location.state || 'PR'];
       return {
         title: `Amarração Amorosa em ${location.name} - Filha de Ogum`,
         description: `Precisa de Amarração Amorosa em ${location.name}? Filha de Ogum é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Sigilo absoluto e resultados.`
@@ -191,17 +213,14 @@ async function startServer() {
             "latitude": -25.4290,
             "longitude": -49.2671
           },
-          "geoRadius": "50000"
+          "geoRadius": "1000000"
         },
         "areaServed": [
-          {
-            "@type": "State",
-            "name": "Paraná"
-          },
-          {
-            "@type": "State",
-            "name": "Santa Catarina"
-          },
+          { "@type": "State", "name": "Paraná" },
+          { "@type": "State", "name": "Santa Catarina" },
+          { "@type": "State", "name": "Rio Grande do Sul" },
+          { "@type": "State", "name": "Goiás" },
+          { "@type": "State", "name": "Distrito Federal" },
           {
             "@type": "City",
             "name": locationName

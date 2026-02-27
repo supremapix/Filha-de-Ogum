@@ -7,6 +7,8 @@ import { FAQAccordion } from '../components/FAQAccordion';
 import { ReviewsScroll } from '../components/ReviewsScroll';
 import { EnhancedSEO } from '../components/EnhancedSEO';
 
+import { VideoCTA } from '../components/VideoCTA';
+
 const Home: React.FC = () => {
   const [searchTerm, setSearchTerm] = React.useState('');
 
@@ -34,8 +36,8 @@ const Home: React.FC = () => {
   return (
     <div className="pb-20">
       <EnhancedSEO 
-        title="Amarração Amorosa em Curitiba, Paraná e Santa Catarina - Filha de Ogum"
-        description="Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Paraná e Santa Catarina. Resultados garantidos e sigilo total. Fale com Filha de Ogum."
+        title="Amarração Amorosa em Curitiba, PR, SC, RS, GO e DF - Filha de Ogum"
+        description="Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Paraná, Santa Catarina, Rio Grande do Sul, Goiás e DF. Resultados garantidos e sigilo total."
         canonical="https://www.amarracaoamorosacuritiba.shop"
         state="PR"
       />
@@ -57,14 +59,14 @@ const Home: React.FC = () => {
             className="max-w-2xl"
           >
             <span className="inline-block px-4 py-1 bg-red-700 text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full mb-6">
-              Especialista em Reconciliação no Sul do Brasil
+              Especialista em Reconciliação em Todo o Brasil
             </span>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Recupere seu Amor com <span className="text-red-500">Filha de Ogum</span>
             </h1>
             <p className="text-xl text-stone-300 mb-8 leading-relaxed">
               Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada. 
-              Atendimento discreto e personalizado em todo o Paraná e Santa Catarina.
+              Atendimento discreto e personalizado em PR, SC, RS, GO e DF.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="https://wa.me/5541997317607" className="px-10 py-5 bg-red-700 text-white text-xl font-black rounded-full hover:bg-red-800 transition-all flex items-center gap-3 shadow-2xl shadow-red-900/40 border-2 border-red-500">
@@ -76,6 +78,27 @@ const Home: React.FC = () => {
               </a>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      <VideoCTA 
+        highlighted={true}
+        title="Veja como podemos te ajudar a ser feliz no amor"
+        subtitle="Assista ao vídeo e entenda por que milhares de pessoas confiam no trabalho da Filha de Ogum para recuperar seus relacionamentos."
+      />
+
+      {/* Prominent SEO Title Section */}
+      <section className="py-12 bg-stone-50 border-b border-stone-200">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-black text-stone-900 uppercase tracking-tighter"
+          >
+            Especialista em Amarração Amorosa e Reconciliação de Casais em <span className="text-red-600">Todo o Brasil</span>
+          </motion.h2>
+          <div className="w-24 h-1 bg-red-600 mx-auto mt-4"></div>
         </div>
       </section>
 
@@ -229,6 +252,80 @@ const Home: React.FC = () => {
                   className="p-3 text-sm font-bold text-stone-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-all border border-transparent hover:border-red-100"
                 >
                   {loc.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Rio Grande do Sul State Section */}
+      <section className="py-20 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-red-600 font-bold uppercase tracking-widest text-sm">Cobertura Sul</span>
+            <h2 className="text-5xl font-black mt-2 mb-4">Rio Grande do Sul</h2>
+            <p className="text-stone-600 text-xl max-w-3xl mx-auto">
+              Atendimento especializado em todo o Rio Grande do Sul. Unindo corações de Porto Alegre ao interior gaúcho.
+            </p>
+          </div>
+
+          <div className="bg-white p-10 rounded-[3rem] shadow-xl border border-stone-100">
+            <div className="flex items-center gap-4 mb-10 pb-6 border-b border-stone-100">
+              <div className="w-16 h-16 bg-red-700 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                <MapPin size={32} />
+              </div>
+              <div>
+                <h3 className="text-3xl font-black">Cidades no RS</h3>
+                <p className="text-stone-500">Encontre sua cidade gaúcha e recupere seu amor.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar">
+              {ALL_LOCATIONS.filter(l => l.type === 'cidade' && l.state === 'RS').map((loc, i) => (
+                <Link 
+                  key={i} 
+                  to={`/local/${loc.id}`}
+                  className="p-3 text-sm font-bold text-stone-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-all border border-transparent hover:border-red-100"
+                >
+                  {loc.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Goiás & DF Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-red-600 font-bold uppercase tracking-widest text-sm">Centro-Oeste</span>
+            <h2 className="text-5xl font-black mt-2 mb-4">Goiás e Distrito Federal</h2>
+            <p className="text-stone-600 text-xl max-w-3xl mx-auto">
+              Chegamos ao coração do Brasil. Atendimento especializado em Goiânia, Brasília e todo o estado de Goiás.
+            </p>
+          </div>
+
+          <div className="bg-stone-50 p-10 rounded-[3rem] shadow-xl border border-stone-100">
+            <div className="flex items-center gap-4 mb-10 pb-6 border-b border-stone-100">
+              <div className="w-16 h-16 bg-red-700 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                <MapPin size={32} />
+              </div>
+              <div>
+                <h3 className="text-3xl font-black">Cidades em GO e DF</h3>
+                <p className="text-stone-500">Sua união amorosa no Centro-Oeste começa aqui.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar">
+              {ALL_LOCATIONS.filter(l => l.type === 'cidade' && (l.state === 'GO' || l.state === 'DF')).map((loc, i) => (
+                <Link 
+                  key={i} 
+                  to={`/local/${loc.id}`}
+                  className="p-3 text-sm font-bold text-stone-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-all border border-transparent hover:border-red-100"
+                >
+                  {loc.name} {loc.state === 'DF' ? '(DF)' : ''}
                 </Link>
               ))}
             </div>

@@ -1,19 +1,22 @@
 import React from 'react';
 import { ALL_LOCATIONS } from '../data/locations';
 import { Link } from 'react-router-dom';
-import { MapPin } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-react';
 import { EnhancedSEO } from '../components/EnhancedSEO';
 
 const Sitemap: React.FC = () => {
   const neighborhoods = ALL_LOCATIONS.filter(l => l.type === 'bairro');
   const citiesPR = ALL_LOCATIONS.filter(l => l.type === 'cidade' && l.state === 'PR');
   const citiesSC = ALL_LOCATIONS.filter(l => l.type === 'cidade' && l.state === 'SC');
+  const citiesRS = ALL_LOCATIONS.filter(l => l.type === 'cidade' && l.state === 'RS');
+  const citiesGO = ALL_LOCATIONS.filter(l => l.type === 'cidade' && l.state === 'GO');
+  const citiesDF = ALL_LOCATIONS.filter(l => l.type === 'cidade' && l.state === 'DF');
 
   return (
     <div className="py-20 bg-white">
       <EnhancedSEO 
-        title="Mapa do Site - Filha de Ogum"
-        description="Confira todas as localidades atendidas pela Filha de Ogum no Paraná e Santa Catarina. Especialista em Amarração Amorosa."
+        title="Mapa do Site - Espaço Pai Laercio"
+        description="Confira todas as localidades atendidas pelo Espaço Pai Laercio no Paraná, Santa Catarina, Rio Grande do Sul, Goiás e DF. Especialista em Amarração Amorosa."
         canonical="https://www.amarracaoamorosacuritiba.shop/sitemap"
       />
       <div className="max-w-7xl mx-auto px-4">
@@ -73,13 +76,59 @@ const Sitemap: React.FC = () => {
               ))}
             </div>
           </div>
+
+          <div>
+            <h2 className="text-2xl font-bold mb-8 flex items-center gap-2 text-red-700">
+              <MapPin /> Cidades do Rio Grande do Sul
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+              {citiesRS.map(loc => (
+                <Link 
+                  key={loc.id} 
+                  to={`/local/${loc.id}`}
+                  className="text-stone-600 hover:text-red-700 text-sm py-1 transition-colors flex items-center gap-2"
+                >
+                  <span className="w-1 h-1 bg-stone-300 rounded-full"></span>
+                  Amarração Amorosa em {loc.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold mb-8 flex items-center gap-2 text-red-700">
+              <MapPin /> Cidades de Goiás e DF
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+              {[...citiesGO, ...citiesDF].map(loc => (
+                <Link 
+                  key={loc.id} 
+                  to={`/local/${loc.id}`}
+                  className="text-stone-600 hover:text-red-700 text-sm py-1 transition-colors flex items-center gap-2"
+                >
+                  <span className="w-1 h-1 bg-stone-300 rounded-full"></span>
+                  Amarração Amorosa em {loc.name} {loc.state === 'DF' ? '(DF)' : ''}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="mt-20 pt-12 border-t border-stone-100">
           <h2 className="text-2xl font-bold mb-6">Páginas Principais</h2>
           <ul className="space-y-4">
             <li><Link to="/" className="text-red-700 font-bold hover:underline">Página Inicial</Link></li>
-            <li><a href="https://wa.me/5541997317607" className="text-stone-600 hover:text-red-700 transition-colors">Atendimento WhatsApp: +55 41 99731-7607</a></li>
+            <li>
+              <a href="https://wa.me/5541984679910" className="text-stone-600 hover:text-red-700 transition-colors flex items-center gap-2">
+                Atendimento WhatsApp: <span className="font-bold">+55 (41) 98467-9910</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.espacopailaercio.com.br" target="_blank" rel="noopener noreferrer" className="text-red-700 font-bold hover:underline flex items-center gap-2">
+                Site Oficial: Espaço Pai Laercio
+                <ArrowRight size={16} />
+              </a>
+            </li>
           </ul>
         </div>
       </div>

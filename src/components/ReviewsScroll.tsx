@@ -5,12 +5,12 @@ import { motion } from 'motion/react';
 const names = ["Maria Silva", "João Pereira", "Ana Santos", "Carlos Oliveira", "Beatriz Costa", "Ricardo Souza", "Fernanda Lima", "Paulo Rocha", "Juliana Alves", "Gabriel Matos"];
 const reviews = [
   "Excelente atendimento! Meu relacionamento mudou da água para o vinho.",
-  "Filha de Ogum é maravilhosa. Recomendo a todos que buscam ajuda real.",
+  "O Espaço Pai Laercio é maravilhoso. Recomendo a todos que buscam ajuda real.",
   "Resultados rápidos e muito profissionalismo. Gratidão eterna.",
   "O melhor lugar de Curitiba para quem busca amarração amorosa séria.",
   "Fui muito bem acolhida e meu problema foi resolvido em poucos dias.",
   "Sigilo total e muita sabedoria nos rituais. Nota 10.",
-  "Recuperei meu casamento graças ao trabalho da Filha de Ogum.",
+  "Recuperei meu casamento graças ao trabalho do Pai Laercio.",
   "Atendimento humanizado e muito assertivo. Recomendo!",
   "Não acreditava mais, mas o trabalho realmente funcionou. Feliz demais.",
   "A melhor especialista que já consultei. Muita luz no seu caminho."

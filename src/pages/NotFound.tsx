@@ -9,7 +9,7 @@ const NotFound: React.FC = () => {
     <div className="min-h-[70vh] flex items-center justify-center px-4 bg-stone-50">
       <EnhancedSEO 
         title="Página Não Encontrada - 404"
-        description="Desculpe, a página que você está procurando não existe. Volte para a página inicial da Filha de Ogum."
+        description="Desculpe, a página que você está procurando não existe. Volte para a página inicial do Espaço Pai Laercio."
         canonical="https://www.amarracaoamorosacuritiba.shop/404"
       />
       

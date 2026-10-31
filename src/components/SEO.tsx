@@ -9,39 +9,42 @@ interface SEOProps {
 }
 
 export const SEO: React.FC<SEOProps> = ({ title, description, canonical, locationName }) => {
-  const fullTitle = `${title} | Filha de Ogum`;
+  const fullTitle = `${title} | Espaço Pai Laercio`;
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Filha de Ogum - Alta Magia e Amarração Amorosa",
+    "name": "Espaço Pai Laercio - Alta Magia e Amarração Amorosa",
     "image": "https://img.supremamidia.com/suprema-img.png",
     "@id": "https://www.amarracaoamorosacuritiba.shop",
     "url": "https://www.amarracaoamorosacuritiba.shop",
-    "telephone": "+55 41 99731-7607",
+    "telephone": "+55 41 3222-8276",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Curitiba",
+      "streetAddress": "Rua Frei Orlando, 437 - Jardim Social",
       "addressLocality": locationName || "Curitiba",
       "addressRegion": "PR",
-      "postalCode": "80000-000",
+      "postalCode": "82530-040",
       "addressCountry": "BR"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": -25.4284,
-      "longitude": -49.2733
+      "latitude": -25.4222,
+      "longitude": -49.2319
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
         "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
       ],
-      "opens": "00:00",
-      "closes": "23:59"
+      "opens": "10:00",
+      "closes": "23:30"
     },
     "sameAs": [
-      "https://wa.me/5541997317607"
+      "https://wa.me/5541984679910",
+      "https://wa.me/5541985223500",
+      "https://wa.me/5541995528940",
+      "https://www.espacopailaercio.com.br"
     ]
   };
 

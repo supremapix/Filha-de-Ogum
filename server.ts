@@ -188,31 +188,31 @@ async function startServer() {
       const schemaMarkup = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "Filha de Ogum - Amarração Amorosa",
+        "name": "Espaço Pai Laercio - Amarração Amorosa",
         "alternateName": "Suprema Mídia - Consultoria Espiritual",
         "image": "https://img.supremamidia.com/suprema-img.png",
         "@id": "https://www.amarracaoamorosacuritiba.shop",
-        "url": "https://www.amarracaoamorosacuritiba.shop",
-        "telephone": "+5541997317607",
+        "telephone": "+554132228276",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Centro",
+          "streetAddress": "Rua Frei Orlando, 437 - Jardim Social",
           "addressLocality": locationName,
           "addressRegion": stateCode,
+          "postalCode": "82530-040",
           "addressCountry": "BR"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": -25.4290,
-          "longitude": -49.2671
+          "latitude": -25.4222,
+          "longitude": -49.2319
         },
         "serviceArea": {
           "@type": "GeoCircle",
           "geoMidpoint": {
             "@type": "GeoCoordinates",
-            "latitude": -25.4290,
-            "longitude": -49.2671
+            "latitude": -25.4222,
+            "longitude": -49.2319
           },
           "geoRadius": "1000000"
         },
@@ -229,7 +229,7 @@ async function startServer() {
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Serviços Espirituais Suprema Mídia",
+          "name": "Serviços Espirituais Espaço Pai Laercio",
           "itemListElement": [
             {
               "@type": "Offer",
@@ -254,16 +254,19 @@ async function startServer() {
           "dayOfWeek": [
             "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
           ],
-          "opens": "00:00",
-          "closes": "23:59"
+          "opens": "10:00",
+          "closes": "23:30"
         },
         "sameAs": [
-          "https://wa.me/5541997317607"
+          "https://wa.me/5541984679910",
+          "https://wa.me/5541985223500",
+          "https://wa.me/5541995528940",
+          "https://www.espacopailaercio.com.br"
         ]
       };
 
       const metaTags = `
-        <title>${metadata.title} | Filha de Ogum</title>
+        <title>${metadata.title} | Espaço Pai Laercio</title>
         <meta name="description" content="${metadata.description}">
         <link rel="canonical" href="${canonical}">
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -277,7 +280,7 @@ async function startServer() {
         <meta name="ICBM" content="-25.4290, -49.2671">
 
         <!-- Open Graph -->
-        <meta property="og:title" content="${metadata.title} | Filha de Ogum">
+        <meta property="og:title" content="${metadata.title} | Espaço Pai Laercio">
         <meta property="og:description" content="${metadata.description}">
         <meta property="og:url" content="${canonical}">
         <meta property="og:type" content="website">
@@ -285,7 +288,7 @@ async function startServer() {
         
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="${metadata.title} | Filha de Ogum">
+        <meta name="twitter:title" content="${metadata.title} | Espaço Pai Laercio">
         <meta name="twitter:description" content="${metadata.description}">
         <meta name="twitter:image" content="https://img.supremamidia.com/suprema-img.png">
         

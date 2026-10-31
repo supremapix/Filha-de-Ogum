@@ -18,7 +18,7 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   state = 'PR',
   type = 'website'
 }) => {
-  const fullTitle = `${title} | Filha de Ogum`;
+  const fullTitle = `${title} | Espaço Pai Laercio`;
   const siteUrl = "https://www.amarracaoamorosacuritiba.shop";
   const logoUrl = "https://img.supremamidia.com/suprema-img.png";
 
@@ -38,27 +38,27 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
     "image": logoUrl,
     "@id": siteUrl,
     "url": siteUrl,
-    "telephone": "+55 41 99731-7607",
+    "telephone": "+55 41 3222-8276",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Curitiba",
+      "streetAddress": "Rua Frei Orlando, 437 - Jardim Social",
       "addressLocality": locationName || "Curitiba",
       "addressRegion": state,
-      "postalCode": "80000-000",
+      "postalCode": "82530-040",
       "addressCountry": "BR"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": -25.4284,
-      "longitude": -49.2733
+      "latitude": -25.4222,
+      "longitude": -49.2319
     },
     "serviceArea": {
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": -25.4284,
-        "longitude": -49.2733
+        "latitude": -25.4222,
+        "longitude": -49.2319
       },
       "geoRadius": "1000000"
     },
@@ -100,11 +100,14 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       "dayOfWeek": [
         "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
       ],
-      "opens": "00:00",
-      "closes": "23:59"
+      "opens": "10:00",
+      "closes": "23:30"
     },
     "sameAs": [
-      "https://wa.me/5541997317607"
+      "https://wa.me/5541984679910",
+      "https://wa.me/5541985223500",
+      "https://wa.me/5541995528940",
+      "https://www.espacopailaercio.com.br"
     ],
     "description": description
   };

@@ -13,8 +13,8 @@ export const VideoCTA: React.FC<VideoCTAProps> = ({
   subtitle = "Trabalhos espirituais poderosos com resultados garantidos e sigilo absoluto.",
   highlighted = false
 }) => {
-  const whatsappNumber = "5541997317607";
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Olá! Gostaria de uma consulta sobre amarração amorosa.`;
+  const whatsappNumber = "5541984679910";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Olá! Gostaria de uma consulta no Espaço Pai Laercio.`;
 
   return (
     <section className={`py-16 px-4 ${highlighted ? 'bg-zinc-950 text-white' : 'bg-white text-zinc-900'}`}>
@@ -68,7 +68,7 @@ export const VideoCTA: React.FC<VideoCTAProps> = ({
           >
             <iframe
               src="https://www.youtube.com/embed/qz_ZBHSg8d0?autoplay=1&mute=1&loop=1&playlist=qz_ZBHSg8d0"
-              title="Filha de Ogum - Amarração Amorosa"
+              title="Espaço Pai Laercio - Amarração Amorosa"
               className="absolute inset-0 w-full h-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

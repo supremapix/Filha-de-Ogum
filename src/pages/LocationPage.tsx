@@ -50,7 +50,7 @@ const LocationPage: React.FC = () => {
       const phrase = searchPhrases[i % searchPhrases.length];
       texts.push({
         title: `${phrase} em ${location.name}`,
-        content: `Se você está em busca de ${phrase.toLowerCase()} na região de ${location.name}, a Filha de Ogum oferece o suporte espiritual necessário para transformar sua vida afetiva de forma definitiva e segura. Atendemos em ${location.type === 'bairro' ? 'todo o bairro' : 'toda a cidade'} de ${location.name} com rituais poderosos e personalizados, focados em trazer resultados reais para quem sofre por amor. A amarração amorosa em ${location.name} é realizada com total sigilo e discrição absoluta, utilizando elementos da alta magia e sabedoria ancestral para garantir que os caminhos do seu coração sejam abertos e as energias negativas sejam afastadas. Muitas pessoas em ${location.name} sofrem diariamente com relacionamentos difíceis, crises no casamento ou separações dolorosas que parecem não ter fim, mas com a orientação correta de uma especialista experiente como a Filha de Ogum, é perfeitamente possível reconquistar a felicidade e a paz interior. Nosso método espiritual em ${location.name} é voltado para a harmonização profunda de relacionamentos e a restauração de laços sentimentais que foram rompidos por inveja, brigas ou falta de comunicação. Este trabalho é ideal para quem deseja recuperar o amor da sua vida com acompanhamento profissional e sigilo garantido em todas as etapas do processo. Não deixe que o tempo e a distância afastem quem você ama; os serviços mais solicitados em ${location.name} incluem a união de casais, limpeza espiritual de ambientes, afastamento de rivais e abertura de caminhos financeiros e amorosos. Cada ritual realizado para moradores de ${location.name} é único e exclusivo, respeitando as vibrações energéticas locais e as necessidades específicas de cada consulente que nos procura. Confie na tradição e no poder de quem realmente entende de espiritualidade em Curitiba e em toda a região metropolitana do Paraná. Através de consultas precisas, conseguimos identificar a raiz do problema em ${location.name} e aplicar a solução espiritual mais adequada para o seu caso, seja ele simples ou complexo. A Filha de Ogum é reconhecida pela sua seriedade e pelos inúmeros depoimentos de sucesso de pessoas que voltaram a sorrir ao lado de quem amam em ${location.name}. Entre em contato agora mesmo e descubra como podemos te ajudar a trilhar um novo caminho de luz e amor.`
+        content: `Se você está em busca de ${phrase.toLowerCase()} na região de ${location.name}, o Espaço Pai Laercio oferece o suporte espiritual necessário para transformar sua vida afetiva de forma definitiva e segura. Atendemos em ${location.type === 'bairro' ? 'todo o bairro' : 'toda a cidade'} de ${location.name} com rituais poderosos e personalizados, focados em trazer resultados reais para quem sofre por amor. A amarração amorosa em ${location.name} é realizada com total sigilo e discrição absoluta, utilizando elementos da alta magia e sabedoria ancestral para garantir que os caminhos do seu coração sejam abertos e as energias negativas sejam afastadas. Muitas pessoas em ${location.name} sofrem diariamente com relacionamentos difíceis, crises no casamento ou separações dolorosas que parecem não ter fim, mas com a orientação correta de um especialista experiente como o Pai Laercio, é perfeitamente possível reconquistar a felicidade e a paz interior. Nosso método espiritual em ${location.name} é voltado para a harmonização profunda de relacionamentos e a restauração de laços sentimentais que foram rompidos por inveja, brigas ou falta de comunicação. Este trabalho é ideal para quem deseja recuperar o amor da sua vida com acompanhamento profissional e sigilo garantido em todas as etapas do processo. Não deixe que o tempo e a distância afastem quem você ama; os serviços mais solicitados em ${location.name} incluem a união de casais, limpeza espiritual de ambientes, afastamento de rivais e abertura de caminhos financeiros e amorosos. Cada ritual realizado para moradores de ${location.name} é único e exclusivo, respeitando as vibrações energéticas locais e as necessidades específicas de cada consulente que nos procura. Confie na tradição e no poder de quem realmente entende de espiritualidade em Curitiba e em toda a região metropolitana do Paraná. Através de consultas precisas, conseguimos identificar a raiz do problema em ${location.name} e aplicar a solução espiritual mais adequada para o seu caso, seja ele simples ou complexo. O Pai Laercio é reconhecido pela sua seriedade e pelos inúmeros depoimentos de sucesso de pessoas que voltaram a sorrir ao lado de quem amam em ${location.name}. Entre em contato agora mesmo e descubra como podemos te ajudar a trilhar um novo caminho de luz e amor.`
       });
     }
     return texts;
@@ -61,8 +61,8 @@ const LocationPage: React.FC = () => {
   return (
     <div className="pb-20">
       <EnhancedSEO 
-        title={`Amarração Amorosa em ${location.name} - Filha de Ogum`}
-        description={`Precisa de Amarração Amorosa em ${location.name}? Filha de Ogum é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Sigilo absoluto e resultados.`}
+        title={`Amarração Amorosa em ${location.name} - Espaço Pai Laercio`}
+        description={`Precisa de Amarração Amorosa em ${location.name}? Espaço Pai Laercio é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Sigilo absoluto e resultados.`}
         canonical={`https://www.amarracaoamorosacuritiba.shop/local/${location.id}`}
         locationName={location.name}
         state={location.state}
@@ -84,24 +84,24 @@ const LocationPage: React.FC = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Amarração Amorosa em <span className="text-red-500">{location.name}</span></h1>
           <p className="text-xl text-stone-400 max-w-3xl leading-relaxed">
             Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada em {location.name}. 
-            Atendimento discreto e personalizado para quem busca reconciliação amorosa com Filha de Ogum.
+            Atendimento discreto e personalizado para quem busca reconciliação amorosa com Pai Laercio.
           </p>
         </div>
       </section>
 
       <VideoCTA 
         title={`Recupere seu Amor em ${location.name}`}
-        subtitle={`Trabalhos espirituais poderosos em ${location.name} com resultados garantidos e sigilo absoluto. Fale com Filha de Ogum.`}
+        subtitle={`Trabalhos espirituais poderosos em ${location.name} com resultados garantidos e sigilo absoluto. Fale com o Espaço Pai Laercio.`}
       />
 
       {/* Quick Actions */}
       <section className="py-16 bg-white border-b border-stone-100">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8">
-          <a href="https://wa.me/5541997317607" className="flex items-center gap-4 px-10 py-5 bg-green-600 text-white rounded-full font-black text-2xl hover:bg-green-700 transition-all shadow-2xl shadow-green-200 border-b-8 border-green-800 active:border-b-0 active:translate-y-2">
+          <a href="https://wa.me/5541984679910" className="flex items-center gap-4 px-10 py-5 bg-green-600 text-white rounded-full font-black text-2xl hover:bg-green-700 transition-all shadow-2xl shadow-green-200 border-b-8 border-green-800 active:border-b-0 active:translate-y-2">
             <MessageCircle size={32} />
             WHATSAPP {location.name.toUpperCase()}
           </a>
-          <a href="tel:+5541997317607" className="flex items-center gap-4 px-10 py-5 bg-stone-900 text-white rounded-full font-black text-2xl hover:bg-stone-800 transition-all shadow-2xl border-b-8 border-stone-950 active:border-b-0 active:translate-y-2">
+          <a href="tel:+554132228276" className="flex items-center gap-4 px-10 py-5 bg-stone-900 text-white rounded-full font-black text-2xl hover:bg-stone-800 transition-all shadow-2xl border-b-8 border-stone-950 active:border-b-0 active:translate-y-2">
             <Phone size={32} />
             LIGAR AGORA
           </a>
@@ -144,15 +144,15 @@ const LocationPage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-black mb-6">Não sofra mais em {location.name}</h2>
           <p className="text-stone-600 mb-10 text-xl font-bold">
-            A felicidade amorosa está ao seu alcance. Entre em contato agora e agende sua consulta espiritual com Filha de Ogum.
+            A felicidade amorosa está ao seu alcance. Entre em contato agora e agende sua consulta espiritual com Pai Laercio.
           </p>
           <div className="flex flex-col items-center gap-6">
-            <a href="https://wa.me/5541997317607" className="inline-flex items-center gap-4 px-12 py-6 bg-red-700 text-white rounded-full font-black text-3xl hover:bg-red-800 transition-all shadow-2xl shadow-red-900/40 border-b-8 border-red-900 active:border-b-0 active:translate-y-2">
+            <a href="https://wa.me/5541984679910" className="inline-flex items-center gap-4 px-12 py-6 bg-red-700 text-white rounded-full font-black text-3xl hover:bg-red-800 transition-all shadow-2xl shadow-red-900/40 border-b-8 border-red-900 active:border-b-0 active:translate-y-2">
               <MessageCircle size={36} />
-              FALAR COM FILHA DE OGUM
+              FALAR COM PAI LAERCIO
             </a>
-            <a href="tel:+5541997317607" className="text-3xl font-black text-stone-900 hover:text-red-700 transition-colors">
-              +55 41 99731-7607
+            <a href="tel:+554132228276" className="text-3xl font-black text-stone-900 hover:text-red-700 transition-colors">
+              +55 (41) 3222-8276
             </a>
           </div>
         </div>

@@ -36,11 +36,27 @@ const Home: React.FC = () => {
   return (
     <div className="pb-20">
       <EnhancedSEO 
-        title="Amarração Amorosa em Curitiba, PR, SC, RS, GO e DF - Filha de Ogum"
+        title="Amarração Amorosa em Curitiba, PR, SC, RS, GO e DF - Espaço Pai Laercio"
         description="Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Paraná, Santa Catarina, Rio Grande do Sul, Goiás e DF. Resultados garantidos e sigilo total."
         canonical="https://www.amarracaoamorosacuritiba.shop"
         state="PR"
       />
+      
+      {/* Official Site Highlight Banner */}
+      <div className="bg-red-700 text-white py-3 px-4 text-center font-bold text-sm md:text-base sticky top-0 z-[60] shadow-xl">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-4">
+          <span className="hidden sm:inline">⚠️ VISITE NOSSO NOVO SITE OFICIAL:</span>
+          <a 
+            href="https://www.espacopailaercio.com.br" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-white text-red-700 px-4 py-1 rounded-full hover:bg-stone-100 transition-all flex items-center gap-2 animate-pulse"
+          >
+            WWW.ESPACOPAILAERCIO.COM.BR
+            <ArrowRight size={16} />
+          </a>
+        </div>
+      </div>
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -62,14 +78,14 @@ const Home: React.FC = () => {
               Especialista em Reconciliação em Todo o Brasil
             </span>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Recupere seu Amor com <span className="text-red-500">Filha de Ogum</span>
+              Recupere seu Amor com <span className="text-red-500">Espaço Pai Laercio</span>
             </h1>
             <p className="text-xl text-stone-300 mb-8 leading-relaxed">
               Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada. 
-              Atendimento discreto e personalizado em PR, SC, RS, GO e DF.
+              Atendimento presencial em Curitiba e online para todo o Brasil.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="https://wa.me/5541997317607" className="px-10 py-5 bg-red-700 text-white text-xl font-black rounded-full hover:bg-red-800 transition-all flex items-center gap-3 shadow-2xl shadow-red-900/40 border-2 border-red-500">
+              <a href="https://wa.me/5541984679910" className="px-10 py-5 bg-red-700 text-white text-xl font-black rounded-full hover:bg-red-800 transition-all flex items-center gap-3 shadow-2xl shadow-red-900/40 border-2 border-red-500">
                 <Heart size={24} />
                 QUERO MEU AMOR DE VOLTA
               </a>
@@ -128,12 +144,12 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-8 bg-stone-900 text-white rounded-3xl border border-stone-800">
             <p className="text-lg leading-relaxed italic">
-              "Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada. Atendimento discreto e personalizado para quem busca reconciliação amorosa com Filha de Ogum no Paraná e Santa Catarina."
+              "Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada. Atendimento discreto e personalizado para quem busca reconciliação amorosa com Pai Laercio no Paraná e em todo o Brasil."
             </p>
           </div>
           <div className="p-8 bg-red-900 text-white rounded-3xl border border-red-800">
             <p className="text-lg leading-relaxed italic">
-              "Método espiritual voltado para harmonização de relacionamentos e restauração de laços sentimentais. Ideal para quem deseja recuperar o amor com acompanhamento profissional e sigilo com Filha de Ogum em todo o Sul."
+              "Método espiritual voltado para harmonização de relacionamentos e restauração de laços sentimentais. Ideal para quem deseja recuperar o amor com acompanhamento profissional e sigilo absoluto no Espaço Pai Laercio."
             </p>
           </div>
         </div>
@@ -340,13 +356,27 @@ const Home: React.FC = () => {
       <section id="contato" className="py-20 bg-stone-900 text-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-black mb-4">Fale com Filha de Ogum Agora</h2>
-            <p className="text-stone-400 text-xl">Preencha os dados abaixo e receba uma orientação inicial via WhatsApp.</p>
-            <div className="mt-8 p-6 bg-red-900/20 border-2 border-red-700 rounded-3xl inline-block">
-              <span className="text-stone-400 block mb-2 font-bold uppercase tracking-widest">Telefone Direto</span>
-              <a href="tel:+5541997317607" className="text-4xl md:text-5xl font-black text-white hover:text-red-500 transition-colors">
-                +55 41 99731-7607
-              </a>
+            <h2 className="text-5xl font-black mb-4">Fale com Pai Laercio Agora</h2>
+            <p className="text-stone-400 text-xl">Atendimento de Segunda a Domingo, das 10h00 às 23h30.</p>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 bg-red-900/20 border-2 border-red-700 rounded-3xl">
+                <span className="text-stone-400 block mb-2 font-bold uppercase tracking-widest">Telefone Fixo</span>
+                <a href="tel:+554132228276" className="text-3xl font-black text-white hover:text-red-500 transition-colors">
+                  +55 (41) 3222-8276
+                </a>
+              </div>
+              <div className="p-6 bg-green-900/20 border-2 border-green-700 rounded-3xl">
+                <span className="text-stone-400 block mb-2 font-bold uppercase tracking-widest">WhatsApp Principal</span>
+                <a href="https://wa.me/5541984679910" className="text-3xl font-black text-white hover:text-green-500 transition-colors">
+                  +55 (41) 98467-9910
+                </a>
+              </div>
+            </div>
+            <div className="mt-8 p-6 bg-stone-800 border-2 border-stone-700 rounded-3xl">
+              <span className="text-stone-400 block mb-2 font-bold uppercase tracking-widest">Endereço Presencial</span>
+              <p className="text-xl font-bold text-white">
+                Rua Frei Orlando, 437 - Jardim Social, Curitiba - PR
+              </p>
             </div>
           </div>
           
@@ -356,8 +386,8 @@ const Home: React.FC = () => {
               const formData = new FormData(e.currentTarget);
               const name = formData.get('name');
               const message = formData.get('message');
-              const text = `Olá Filha de Ogum, meu nome é ${name}. Gostaria de uma orientação: ${message}`;
-              window.open(`https://wa.me/5541997317607?text=${encodeURIComponent(text)}`, '_blank');
+              const text = `Olá Pai Laercio, meu nome é ${name}. Gostaria de uma orientação: ${message}`;
+              window.open(`https://wa.me/5541984679910?text=${encodeURIComponent(text)}`, '_blank');
             }}
             className="space-y-6 bg-stone-800 p-10 rounded-[2.5rem] border border-stone-700 shadow-2xl"
           >
@@ -377,7 +407,7 @@ const Home: React.FC = () => {
                 <select className="w-full px-6 py-4 rounded-2xl bg-stone-900 border-2 border-stone-700 focus:outline-none focus:border-red-500 transition-all text-lg">
                   <option>Amarração Amorosa</option>
                   <option>Limpeza Espiritual</option>
-                  <option>Consulta de Búzios</option>
+                  <option>Consulta Espiritual</option>
                   <option>Outros Trabalhos</option>
                 </select>
               </div>

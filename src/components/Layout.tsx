@@ -37,8 +37,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               </motion.div>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-2xl leading-tight text-stone-900 group-hover:text-red-700 transition-colors">Filha de Ogum</span>
-              <span className="text-[10px] text-stone-500 uppercase tracking-[0.4em] font-bold">Alta Magia Amorosa</span>
+              <span className="font-bold text-2xl leading-tight text-stone-900 group-hover:text-red-700 transition-colors">Espaço Pai Laercio</span>
+              <span className="text-[10px] text-stone-500 uppercase tracking-[0.4em] font-bold">Alta Magia e Orientação Espiritual</span>
             </div>
           </Link>
 
@@ -49,14 +49,14 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           </nav>
 
           <div className="flex items-center gap-4">
-            <a href="tel:+5541997317607" className="hidden lg:flex flex-col items-end group">
-              <span className="text-[10px] text-stone-500 uppercase font-bold tracking-widest">Ligue Agora (24h)</span>
-              <span className="text-xl font-black text-stone-900 group-hover:text-red-700 transition-colors">+55 41 99731-7607</span>
+            <a href="tel:+554132228276" className="hidden lg:flex flex-col items-end group">
+              <span className="text-[10px] text-stone-500 uppercase font-bold tracking-widest">Ligue Agora</span>
+              <span className="text-xl font-black text-stone-900 group-hover:text-red-700 transition-colors">+55 (41) 3222-8276</span>
             </a>
-            <a href="tel:+5541997317607" className="p-3 bg-red-700 text-white rounded-full hover:bg-red-800 transition-all shadow-lg lg:hidden">
+            <a href="tel:+554132228276" className="p-3 bg-red-700 text-white rounded-full hover:bg-red-800 transition-all shadow-lg lg:hidden">
               <Phone size={24} />
             </a>
-            <a href="https://wa.me/5541997317607" className="bg-green-600 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-green-700 transition-all shadow-xl shadow-green-200 border-2 border-green-400 animate-pulse">
+            <a href="https://wa.me/5541984679910" className="bg-green-600 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-green-700 transition-all shadow-xl shadow-green-200 border-2 border-green-400 animate-pulse">
               <MessageCircle size={24} />
               <span className="text-lg font-black hidden sm:inline">WHATSAPP</span>
             </a>
@@ -80,7 +80,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                     <div className="premium-shine"></div>
                   </motion.div>
                 </div>
-                <h3 className="text-white font-bold text-3xl">Filha de Ogum</h3>
+                <h3 className="text-white font-bold text-3xl">Espaço Pai Laercio</h3>
               </div>
               <p className="text-sm leading-relaxed text-stone-400">
                 Especialista em rituais de amarração amorosa, união de casais e limpeza espiritual. 
@@ -88,15 +88,31 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               </p>
             </div>
             <div>
-              <h3 className="text-white font-bold text-lg mb-4">Contato Rápido</h3>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center gap-3">
-                  <Phone size={20} className="text-red-500" />
-                  <span className="text-lg font-bold text-white">+55 41 99731-7607</span>
+              <h3 className="text-white font-bold text-lg mb-4">Nossos Contatos</h3>
+              <ul className="space-y-4 text-sm">
+                <li className="flex flex-col gap-1">
+                  <div className="flex items-center gap-3">
+                    <Phone size={20} className="text-red-500" />
+                    <span className="font-bold text-white">Fixo: +55 (41) 3222-8276</span>
+                  </div>
                 </li>
-                <li className="flex items-center gap-2">
-                  <Mail size={16} className="text-red-500" />
-                  <span>contato@amarracaoamorosacuritiba.shop</span>
+                <li className="flex flex-col gap-2">
+                  <div className="flex items-center gap-3">
+                    <MessageCircle size={20} className="text-green-500" />
+                    <span className="font-bold text-white uppercase text-xs tracking-tighter">WhatsApp Oficiais:</span>
+                  </div>
+                  <div className="flex flex-col gap-1 pl-8">
+                    <a href="https://wa.me/5541984679910" className="hover:text-white transition-colors text-base font-bold text-stone-200">+55 (41) 98467-9910</a>
+                    <a href="https://wa.me/5541985223500" className="hover:text-white transition-colors text-base font-bold text-stone-200">+55 (41) 98522-3500</a>
+                    <a href="https://wa.me/5541995528940" className="hover:text-white transition-colors text-base font-bold text-stone-200">+55 (41) 99552-8940</a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="mt-1"><ArrowUp size={16} className="text-red-500 rotate-90" /></div>
+                  <div className="flex flex-col">
+                    <span className="text-stone-300 font-bold">Endereço:</span>
+                    <span className="text-stone-400">Rua Frei Orlando, 437 - Jardim Social<br/>Curitiba - PR, 82530-040</span>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -104,6 +120,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <h3 className="text-white font-bold text-lg mb-4">Links Úteis</h3>
               <ul className="space-y-2 text-sm">
                 <li><Link to="/sitemap" className="hover:text-white transition-colors">Mapa do Site</Link></li>
+                <li><a href="https://www.espacopailaercio.com.br" target="_blank" rel="noopener noreferrer" className="text-red-500 font-bold hover:underline">Site Oficial: Espaço Pai Laercio</a></li>
                 <li><Link to="/" className="hover:text-white transition-colors">Política de Privacidade</Link></li>
               </ul>
             </div>
@@ -152,7 +169,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       </AnimatePresence>
 
       <a 
-        href="https://wa.me/5541997317607" 
+        href="https://wa.me/5541984679910" 
         className="fixed bottom-6 right-6 z-40 w-20 h-20 bg-green-500 text-white rounded-full flex flex-col items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce border-4 border-white"
       >
         <MessageCircle size={32} />

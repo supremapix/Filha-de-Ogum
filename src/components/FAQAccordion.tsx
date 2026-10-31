@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 const faqs = [
   {
     q: "A amarração amorosa realmente funciona?",
-    a: "Sim, quando realizada por uma especialista como a Filha de Ogum, que utiliza rituais ancestrais e materiais consagrados. Os resultados dependem da fé e do seguimento das orientações espirituais."
+    a: "Sim, quando realizada por um especialista como o Pai Laercio, que utiliza rituais ancestrais e materiais consagrados. Os resultados dependem da fé e do seguimento das orientações espirituais."
   },
   {
     q: "Quanto tempo demora para ver os resultados?",
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Como posso agendar uma consulta?",
-    a: "O agendamento é feito de forma simples e rápida através do nosso WhatsApp +55 41 99731-7607. Atendemos 24 horas por dia."
+    a: "O agendamento é feito de forma simples e rápida através do nosso WhatsApp +55 (41) 98467-9910. Atendemos todos os dias das 10h00 às 23h30."
   },
   {
     q: "Existe algum perigo em fazer amarração?",

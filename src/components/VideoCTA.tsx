@@ -10,11 +10,11 @@ interface VideoCTAProps {
 
 export const VideoCTA: React.FC<VideoCTAProps> = ({
   title = "Conheça o atendimento espiritual",
-  subtitle = "Informações sobre os serviços do Espaço Pai Laercio. Sem promessa de resultados.",
+  subtitle = "Informações sobre os serviços do Espaço Pai Laércio. Sem promessa de resultados.",
   highlighted = false
 }) => {
   const whatsappNumber = "5541984679910";
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Olá! Gostaria de uma consulta no Espaço Pai Laercio.`;
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Olá! Gostaria de uma consulta no Espaço Pai Laércio.`;
 
   return (
     <section className={`py-16 px-4 ${highlighted ? 'bg-zinc-950 text-white' : 'bg-white text-zinc-900'}`}>
@@ -68,7 +68,7 @@ export const VideoCTA: React.FC<VideoCTAProps> = ({
           >
             <iframe
               src="https://www.youtube.com/embed/qz_ZBHSg8d0"
-              title="Espaço Pai Laercio - Amarração Amorosa"
+              title="Espaço Pai Laércio - Amarração Amorosa"
               className="absolute inset-0 w-full h-full"
               loading="lazy"
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

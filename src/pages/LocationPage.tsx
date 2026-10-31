@@ -26,7 +26,7 @@ const LocationPage: React.FC = () => {
   const stateName = stateNames[location.state || 'PR'];
 
   const seoTexts = [
-    { title: `Orientação espiritual para quem está em ${location.name}`, content: `O Espaço Pai Laercio oferece atendimento online para pessoas em ${location.name}. O atendimento presencial é realizado em Curitiba, na Rua Frei Orlando, 437, Jardim Social. Entre em contato para saber como funciona a consulta e esclarecer suas dúvidas.` },
+    { title: `Orientação espiritual para quem está em ${location.name}`, content: `O Espaço Pai Laércio oferece atendimento online para pessoas em ${location.name}. O atendimento presencial é realizado em Curitiba, na Rua Frei Orlando, 437, Jardim Social. Entre em contato para saber como funciona a consulta e esclarecer suas dúvidas.` },
     { title: 'Serviços e consulta', content: 'Conheça os serviços de amarração amorosa, união de casais e limpeza espiritual. Converse sobre sua situação e solicite informações sobre cada serviço antes de decidir.' },
     { title: 'Sem promessa de resultados', content: 'Práticas espirituais envolvem crenças pessoais. Não há garantia de reconciliação, de mudança de comportamento de outra pessoa ou de prazo para resultados. As escolhas e a autonomia de todas as pessoas devem ser respeitadas.' }
   ];
@@ -34,8 +34,8 @@ const LocationPage: React.FC = () => {
   return (
     <div className="pb-20">
       <EnhancedSEO 
-        title={`Amarração Amorosa em ${location.name} - Espaço Pai Laercio`}
-        description={`Precisa de Amarração Amorosa em ${location.name}? Espaço Pai Laercio é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Atendimento online e presencial em Curitiba.`}
+        title={`Amarração Amorosa em ${location.name} - Espaço Pai Laércio`}
+        description={`Precisa de Amarração Amorosa em ${location.name}? Espaço Pai Laércio é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Atendimento online e presencial em Curitiba.`}
         canonical={`https://www.amarracaoamorosacuritiba.shop/local/${location.id}`}
         locationName={location.name}
         state={location.state}
@@ -57,14 +57,14 @@ const LocationPage: React.FC = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Amarração Amorosa em <span className="text-red-500">{location.name}</span></h1>
           <p className="text-xl text-stone-400 max-w-3xl leading-relaxed">
             Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada em {location.name}. 
-            Atendimento discreto e personalizado para quem busca reconciliação amorosa com Pai Laercio.
+            Atendimento discreto e personalizado para quem busca reconciliação amorosa com Pai Laércio.
           </p>
         </div>
       </section>
 
       <VideoCTA 
         title={`Orientação espiritual para ${location.name}`}
-        subtitle="Conheça os serviços e tire suas dúvidas com o Espaço Pai Laercio."
+        subtitle="Conheça os serviços e tire suas dúvidas com o Espaço Pai Laércio."
       />
 
       {/* Quick Actions */}
@@ -116,8 +116,9 @@ const LocationPage: React.FC = () => {
       <section className="py-20 bg-stone-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-black mb-6">Tire suas dúvidas sobre o atendimento</h2>
+          <Link className="inline-block underline text-red-800 p-3 mb-4" to="/#como-funciona">Leia o guia: como funciona a consulta espiritual</Link>
           <p className="text-stone-600 mb-10 text-xl font-bold">
-            Entre em contato com Pai Laercio para conhecer o atendimento e agendar sua consulta.
+            Entre em contato com Pai Laércio para conhecer o atendimento e agendar sua consulta.
           </p>
           <div className="flex flex-col items-center gap-6">
             <a href="https://wa.me/5541984679910" className="max-w-full text-center justify-center inline-flex items-center gap-4 px-12 py-6 bg-red-700 text-white rounded-full font-black text-3xl hover:bg-red-800 transition-all shadow-2xl shadow-red-900/40 border-b-8 border-red-900 active:border-b-0 active:translate-y-2">

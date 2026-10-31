@@ -3,6 +3,7 @@ import { Layout } from './components/Layout';
 import Home from './pages/Home';
 import LocationPage from './pages/LocationPage';
 import Sitemap from './pages/Sitemap';
+import Links from './pages/Links';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/depoimentos" element={<Home />} />
           <Route path="/agendar" element={<Home />} />
           <Route path="/local/:id" element={<LocationPage />} />
+          <Route path="/links" element={<Links />} />
           <Route path="/sitemap" element={<Sitemap />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

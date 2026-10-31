@@ -43,4 +43,10 @@
     <priority>0.8</priority>
   </url>
   <!-- Dynamic locations are served via /sitemap.xml route -->
+  <url>
+    <loc>https://www.amarracaoamorosacuritiba.shop/links</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

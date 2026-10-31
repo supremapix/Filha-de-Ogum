@@ -7,9 +7,9 @@ import { EnhancedSEO } from '../components/EnhancedSEO';
 const NotFound: React.FC = () => {
   return (
     <div className="min-h-[70vh] flex items-center justify-center px-4 bg-stone-50">
-      <EnhancedSEO 
+      <EnhancedSEO noIndex
         title="Página Não Encontrada - 404"
-        description="Desculpe, a página que você está procurando não existe. Volte para a página inicial do Espaço Pai Laercio."
+        description="Desculpe, a página que você está procurando não existe. Volte para a página inicial do Espaço Pai Laércio."
         canonical="https://www.amarracaoamorosacuritiba.shop/404"
       />
       

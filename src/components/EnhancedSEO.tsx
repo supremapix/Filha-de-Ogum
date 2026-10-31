@@ -8,6 +8,7 @@ interface EnhancedSEOProps {
   locationName?: string;
   state?: 'PR' | 'SC' | 'RS' | 'GO' | 'DF';
   type?: 'website' | 'article' | 'business';
+  noIndex?: boolean;
 }
 
 export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({ 
@@ -16,38 +17,35 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   canonical, 
   locationName,
   state = 'PR',
+  noIndex = false,
   type = 'website'
 }) => {
-  const fullTitle = title.includes("Espaço Pai Laercio") ? title : `${title} | Espaço Pai Laercio`;
+  const fullTitle = title.includes("Espaço Pai Laércio") ? title : `${title} | Espaço Pai Laércio`;
   const siteUrl = "https://www.amarracaoamorosacuritiba.shop";
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${siteUrl}/#organization`,
-    "name": "Espaço Pai Laercio",
+    "name": "Centro Sagrado Coração de Jesus",
+    "alternateName": ["Espaço Pai Laércio", "Pai Laércio"],
+    "logo": "https://www.espacopailaercio.com.br/images/logo-transparent.png",
     "url": siteUrl,
-    "telephone": "+55 41 3222-8276",
-    "email": "contato@amarracaoamorosacuritiba.shop",
+    "telephone": "+55 41 98467-9910",
+    "email": "laercioadriano@yahoo.com.br",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Rua Frei Orlando, 437 - Jardim Social",
       "addressLocality": "Curitiba",
       "addressRegion": "PR",
-      "postalCode": "82530-040",
       "addressCountry": "BR"
     },
     "areaServed": { "@type": "Country", "name": "Brasil" },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Serviços do Espaço Pai Laercio",
+      "name": "Serviços do Espaço Pai Laércio",
       "itemListElement": ["Amarração Amorosa", "União de Casais", "Limpeza Espiritual"].map(name => ({
         "@type": "Offer", "itemOffered": { "@type": "Service", name }
       }))
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "10:00", "closes": "23:30"
     },
     "sameAs": ["https://www.espacopailaercio.com.br"],
     "description": "Orientação espiritual, amarração amorosa, união de casais e limpeza espiritual. Atendimento presencial em Curitiba e online."
@@ -87,8 +85,8 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
 
       {/* Advanced SEO */}
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-      <meta name="googlebot" content="index, follow" />
+      <meta name="robots" content={noIndex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
+      <meta name="googlebot" content={noIndex ? "noindex, follow" : "index, follow"} />
       <meta name="theme-color" content="#dc2626" />
       
       {/* Structured Data */}

@@ -15,13 +15,14 @@ const Sitemap: React.FC = () => {
   return (
     <div className="py-20 bg-white">
       <EnhancedSEO 
-        title="Mapa do Site - Espaço Pai Laercio"
-        description="Confira todas as localidades atendidas pelo Espaço Pai Laercio no Paraná, Santa Catarina, Rio Grande do Sul, Goiás e DF. Especialista em Amarração Amorosa."
+        title="Mapa do Site - Espaço Pai Laércio"
+        description="Confira todas as localidades atendidas pelo Espaço Pai Laércio no Paraná, Santa Catarina, Rio Grande do Sul, Goiás e DF. Especialista em Amarração Amorosa."
         canonical="https://www.amarracaoamorosacuritiba.shop/sitemap"
       />
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold mb-12 border-b pb-6">Mapa do Site</h1>
         
+        <nav aria-label="Páginas principais" className="mb-10 flex flex-wrap gap-4"><Link className="p-3 underline" to="/">Início</Link><Link className="p-3 underline" to="/links">Links e canais oficiais</Link></nav>
         <div className="space-y-20">
           <div>
             <h2 className="text-2xl font-bold mb-8 flex items-center gap-2 text-red-700">
@@ -125,7 +126,7 @@ const Sitemap: React.FC = () => {
             </li>
             <li>
               <a href="https://www.espacopailaercio.com.br" target="_blank" rel="noopener noreferrer" className="text-red-700 font-bold hover:underline flex items-center gap-2">
-                Site Oficial: Espaço Pai Laercio
+                Site Oficial: Espaço Pai Laércio
                 <ArrowRight size={16} />
               </a>
             </li>

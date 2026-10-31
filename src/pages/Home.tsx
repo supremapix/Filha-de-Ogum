@@ -6,6 +6,7 @@ import { motion } from 'motion/react';
 import { FAQAccordion } from '../components/FAQAccordion';
 import { EnhancedSEO } from '../components/EnhancedSEO';
 
+import { AttendanceGuide } from '../components/AttendanceGuide';
 import { VideoCTA } from '../components/VideoCTA';
 
 const Home: React.FC = () => {
@@ -19,7 +20,7 @@ const Home: React.FC = () => {
   return (
     <div className="pb-20">
       <EnhancedSEO 
-        title="Amarração Amorosa em Curitiba, PR, SC, RS, GO e DF - Espaço Pai Laercio"
+        title="Amarração Amorosa em Curitiba, PR, SC, RS, GO e DF - Espaço Pai Laércio"
         description="Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Paraná, Santa Catarina, Rio Grande do Sul, Goiás e DF. Atendimento online e presencial em Curitiba."
         canonical="https://www.amarracaoamorosacuritiba.shop"
         state="PR"
@@ -28,7 +29,7 @@ const Home: React.FC = () => {
       <section className="home-hero" aria-labelledby="hero-title">
         <div className="hero-inner">
           <div>
-            <p className="hero-eyebrow">Espaço Pai Laercio · Curitiba</p>
+            <p className="hero-eyebrow">Espaço Pai Laércio · Curitiba</p>
             <h1 id="hero-title">Orientação espiritual com <span>atenção ao seu momento.</span></h1>
             <p className="hero-description">Conheça nossos serviços de amarração amorosa, união de casais e limpeza espiritual. Atendimento presencial em Curitiba e online para todo o Brasil.</p>
             <div className="hero-actions">
@@ -40,15 +41,16 @@ const Home: React.FC = () => {
             <h2>Vamos conversar com calma?</h2>
             <ol><li>Escolha ligar ou enviar uma mensagem.</li><li>Conte o que você deseja saber.</li><li>Tire suas dúvidas sobre o atendimento.</li></ol>
             <a href="tel:+554132228276">Ligar: (41) 3222-8276</a>
-            <p>Segunda a domingo, das 10h às 23h30.</p>
+            <p>Atendimento com hora marcada.</p>
           </aside>
         </div>
       </section>
 
+      <AttendanceGuide />
       <VideoCTA 
         highlighted={true}
         title="Conheça o atendimento espiritual"
-        subtitle="Assista ao vídeo do Espaço Pai Laercio e tire suas dúvidas sobre os serviços."
+        subtitle="Assista ao vídeo do Espaço Pai Laércio e tire suas dúvidas sobre os serviços."
       />
 
       {/* Prominent SEO Title Section */}
@@ -92,12 +94,12 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-8 bg-stone-900 text-white rounded-3xl border border-stone-800">
             <p className="text-lg leading-relaxed italic">
-              "Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada. Atendimento discreto e personalizado para quem busca reconciliação amorosa com Pai Laercio no Paraná e em todo o Brasil."
+              "Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada. Atendimento discreto e personalizado para quem busca reconciliação amorosa com Pai Laércio no Paraná e em todo o Brasil."
             </p>
           </div>
           <div className="p-8 bg-red-900 text-white rounded-3xl border border-red-800">
             <p className="text-lg leading-relaxed italic">
-              "Método espiritual voltado para harmonização de relacionamentos e restauração de laços sentimentais. Ideal para quem deseja recuperar o amor com orientação espiritual no Espaço Pai Laercio."
+              "Método espiritual voltado para harmonização de relacionamentos e restauração de laços sentimentais. Ideal para quem deseja recuperar o amor com orientação espiritual no Espaço Pai Laércio."
             </p>
           </div>
         </div>
@@ -105,10 +107,10 @@ const Home: React.FC = () => {
 
       <section id="locais" className="py-12 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4">Encontre seu local de atendimento</h2>
+          <h2 className="text-3xl font-bold mb-4">Veja cidades atendidas online</h2>
           <label htmlFor="location-search" className="block font-bold mb-2">Digite sua cidade ou bairro</label>
           <input id="location-search" type="search" value={searchTerm} onChange={event => setSearchTerm(event.target.value)} className="w-full max-w-2xl bg-white border-2 border-stone-500 rounded-xl p-4" placeholder="Exemplo: Curitiba" />
-          {searchTerm.trim() && <><p role="status" className="my-4">{filteredLocations.length} locais encontrados.</p><ul className="grid gap-2 md:grid-cols-3">{filteredLocations.map(loc => <li key={loc.id}><Link className="block p-3 bg-white border border-stone-300 rounded-lg underline" to={`/local/${loc.id}`}>{loc.name} — {loc.state}</Link></li>)}</ul></>}
+          {searchTerm.trim() && <><p role="status" className="my-4">{filteredLocations.length} cidades e bairros encontrados.</p><ul className="grid gap-2 md:grid-cols-3">{filteredLocations.map(loc => <li key={loc.id}><Link className="block p-3 bg-white border border-stone-300 rounded-lg underline" to={`/local/${loc.id}`}>{loc.name} — {loc.state}</Link></li>)}</ul></>}
         </div>
       </section>
 
@@ -119,7 +121,7 @@ const Home: React.FC = () => {
             <span className="text-red-600 font-bold uppercase tracking-widest text-sm">Cobertura Estadual</span>
             <h2 className="text-5xl font-black mt-2 mb-4">Paraná</h2>
             <p className="text-stone-600 text-xl max-w-3xl mx-auto">
-              Atendimento especializado em todo o estado do Paraná. Unindo corações de Curitiba ao interior com a força da Alta Magia.
+              Atendimento online para pessoas no Paraná. Para atendimento presencial, confirme o agendamento em Curitiba.
             </p>
           </div>
 
@@ -159,7 +161,7 @@ const Home: React.FC = () => {
             <span className="text-red-600 font-bold uppercase tracking-widest text-sm">Expansão Sul</span>
             <h2 className="text-5xl font-black mt-2 mb-4">Santa Catarina</h2>
             <p className="text-stone-600 text-xl max-w-3xl mx-auto">
-              Agora atendendo todas as cidades de Santa Catarina. A força de Filha de Ogum unindo casais de Florianópolis a Joinville.
+              Atendimento online para pessoas em Santa Catarina. Consulte a disponibilidade e tire suas dúvidas pelo WhatsApp.
             </p>
           </div>
 
@@ -199,7 +201,7 @@ const Home: React.FC = () => {
             <span className="text-red-600 font-bold uppercase tracking-widest text-sm">Cobertura Sul</span>
             <h2 className="text-5xl font-black mt-2 mb-4">Rio Grande do Sul</h2>
             <p className="text-stone-600 text-xl max-w-3xl mx-auto">
-              Atendimento especializado em todo o Rio Grande do Sul. Unindo corações de Porto Alegre ao interior gaúcho.
+              Atendimento online para pessoas no Rio Grande do Sul. Conheça os serviços e como agendar uma consulta.
             </p>
           </div>
 
@@ -239,7 +241,7 @@ const Home: React.FC = () => {
             <span className="text-red-600 font-bold uppercase tracking-widest text-sm">Centro-Oeste</span>
             <h2 className="text-5xl font-black mt-2 mb-4">Goiás e Distrito Federal</h2>
             <p className="text-stone-600 text-xl max-w-3xl mx-auto">
-              Chegamos ao coração do Brasil. Atendimento especializado em Goiânia, Brasília e todo o estado de Goiás.
+              Atendimento online para pessoas em Goiás e no Distrito Federal. Converse sobre os serviços antes de agendar.
             </p>
           </div>
 
@@ -279,8 +281,8 @@ const Home: React.FC = () => {
       <section id="contato" className="py-20 bg-stone-900 text-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-black mb-4">Fale com Pai Laercio Agora</h2>
-            <p className="text-stone-400 text-xl">Atendimento de Segunda a Domingo, das 10h00 às 23h30.</p>
+            <h2 className="text-5xl font-black mb-4">Fale com Pai Laércio Agora</h2>
+            <p className="text-stone-400 text-xl">Confirme dias e horários pelo WhatsApp antes de ir.</p>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-6 bg-red-900/20 border-2 border-red-700 rounded-3xl">
                 <span className="text-stone-400 block mb-2 font-bold uppercase tracking-widest">Telefone Fixo</span>
@@ -311,7 +313,7 @@ const Home: React.FC = () => {
               const name = formData.get('name');
               const message = formData.get('message');
               const subject = formData.get('subject');
-              const text = `Olá Pai Laercio, meu nome é ${name}. Gostaria de uma orientação sobre ${subject}: ${message}`;
+              const text = `Olá Pai Laércio, meu nome é ${name}. Gostaria de uma orientação sobre ${subject}: ${message}`;
               window.location.assign(`https://wa.me/5541984679910?text=${encodeURIComponent(text)}`);
             }}
             className="space-y-6 bg-stone-800 p-10 rounded-[2.5rem] border border-stone-700 shadow-2xl"

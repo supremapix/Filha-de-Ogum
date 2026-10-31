@@ -14,17 +14,21 @@ const faqs = [
     a: "Entre em contato para esclarecer como suas informações serão tratadas. Compartilhe apenas os dados necessários ao atendimento."
   },
   {
-    q: "Quais materiais são usados nos rituais?",
-    a: "Utilizamos elementos da natureza como ervas sagradas, velas consagradas, mel, cristais e outros itens específicos que variam conforme a necessidade do seu caso."
+    q: "Como saber o valor do atendimento?",
+    a: "Pergunte diretamente pelo canal oficial. Confirme o valor total, o que está incluído e qualquer cobrança adicional antes da contratação."
   },
   {
     q: "Como posso agendar uma consulta?",
-    a: "O agendamento é feito de forma simples e rápida através do nosso WhatsApp +55 (41) 98467-9910. Atendemos todos os dias das 10h00 às 23h30."
+    a: "O agendamento é feito de forma simples e rápida através do nosso WhatsApp +55 (41) 98467-9910. Confirme a disponibilidade antes de ir. O atendimento é com hora marcada."
   },
   {
     q: "Existe algum perigo em fazer amarração?",
     a: "Peça explicações sobre qualquer prática antes de concordar. A orientação espiritual não substitui acompanhamento médico, psicológico ou jurídico, e deve respeitar a autonomia de todas as pessoas."
-  }
+  },
+  { q: "Preciso saber qual trabalho espiritual escolher?", a: "Não é necessário chegar com um nome escolhido. Apresente sua dúvida e peça explicações sobre os serviços antes de decidir." },
+  { q: "Há uma unidade em cada cidade citada?", a: "As páginas de cidades informam a cobertura do atendimento online. Para atendimento presencial, confirme o endereço de Curitiba pelos canais oficiais." },
+  { q: "Posso pedir ajuda para usar o celular?", a: "Se desejar, uma pessoa de sua confiança pode ajudar você a abrir o telefone ou o WhatsApp. Preserve sua privacidade ao compartilhar informações pessoais." }
+
 ];
 
 export const FAQAccordion: React.FC = () => (

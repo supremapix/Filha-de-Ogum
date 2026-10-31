@@ -212,3 +212,36 @@ main section { scroll-margin-top: 1rem; }
 @media (max-width: 380px) { .brand-heart { display: none; } .site-brand strong { font-size: 1rem; } .site-brand small { font-size: .8rem; } }
 html { scroll-padding-bottom: calc(6rem + env(safe-area-inset-bottom)); }
 a, button, input, select, textarea, summary { scroll-margin-bottom: 6rem; }
+.contact-card-section { padding: 2.5rem 1rem; background: #f7efe9; border-top: 1px solid #e7ded6; }
+.contact-card { max-width: 1120px; margin: auto; display: grid; gap: 1.5rem; align-items: center; }
+.contact-card img { width: 250px; height: auto; max-width: 100%; margin-inline: auto; border-radius: .75rem; border: 1px solid #d6d3d1; }
+.contact-card h2 { font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.25; font-weight: 700; margin-bottom: 1rem; }
+.contact-card p { margin-bottom: .75rem; }
+@media (min-width: 760px) { .contact-card { grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; } }
+.attendance-guide { padding: clamp(2rem, 5vw, 4rem) 1rem; background: white; }
+.guide-inner { max-width: 850px; margin: auto; }
+.guide-inner h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 700; line-height: 1.25; margin-bottom: 1.25rem; }
+.guide-inner p { margin-bottom: 1rem; }
+.guide-topics { display: grid; gap: .8rem; margin-top: 1.5rem; }
+.guide-topics details { border: 1px solid #a8a29e; border-radius: .7rem; background: #fafaf9; }
+.guide-topics summary { padding: 1rem; min-height: 56px; font-weight: 700; cursor: pointer; }
+.guide-topics details > div { padding: 0 1rem 1rem; }
+.guide-topics ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+.guide-topics li { margin-bottom: .6rem; }
+.links-page { padding: 2.5rem 1rem; background: #fafaf9; }
+.links-intro, .links-directory { max-width: 950px; margin: 0 auto 2.5rem; }
+.links-page h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; font-weight: 700; margin-bottom: 1.25rem; }
+.links-page h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem; }
+.links-page h3 { font-size: 1.2rem; font-weight: 700; }
+.links-page p { margin-bottom: 1rem; }
+.links-directory ul { display: grid; gap: 1rem; margin-top: 1.5rem; }
+.links-directory li { padding: 1.25rem; background: white; border: 1px solid #d6d3d1; border-radius: .75rem; }
+.links-directory li a { display: flex; gap: .75rem; align-items: center; justify-content: space-between; min-height: 54px; padding: .65rem 1rem; border-radius: .5rem; background: #7f1d1d; color: white; font-weight: 700; }
+@media (min-width: 760px) { .links-directory ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 900px) and (max-width: 1200px) { .main-nav a { padding-inline: .65rem; } }
+.channel-group { margin-top: 2.5rem; }
+.reflection-card { padding: 2rem 1rem; background: #fff8eb; border-top: 1px solid #e6d5b6; }
+.reflection-card > div { max-width: 950px; margin: auto; border-left: 5px solid #92400e; padding: .5rem 0 .5rem 1.25rem; }
+.reflection-eyebrow { font-weight: 700; color: #78350f; margin-bottom: .5rem; }
+.reflection-card h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 700; line-height: 1.3; margin-bottom: .75rem; }
+.reflection-card p:last-child { color: #292524; max-width: 75ch; }

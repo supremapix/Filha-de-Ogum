@@ -127,6 +127,7 @@ async function startServer() {
       { url: "/contato", priority: "0.7", freq: "monthly" },
       { url: "/depoimentos", priority: "0.8", freq: "weekly" },
       { url: "/agendar", priority: "0.8", freq: "weekly" },
+      { url: "/links", priority: "0.7", freq: "monthly" },
       { url: "/sitemap", priority: "0.5", freq: "monthly" },
     ];
 

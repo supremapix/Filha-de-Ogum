@@ -1,15 +1,17 @@
 import React from 'react';
 import { ALL_LOCATIONS } from '../data/locations';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { MapPin, Star, ShieldCheck, Zap, MessageCircle, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { FAQAccordion } from '../components/FAQAccordion';
 import { EnhancedSEO } from '../components/EnhancedSEO';
 
+import { ReflectionCard } from '../components/ReflectionCard';
+import { ServiceIllustrations } from '../components/ServiceIllustrations';
 import { AttendanceGuide } from '../components/AttendanceGuide';
-import { VideoCTA } from '../components/VideoCTA';
 
 const Home: React.FC = () => {
+  const currentLocation = useLocation();
   const [searchTerm, setSearchTerm] = React.useState('');
 
   const normalizeSearch = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLowerCase();
@@ -26,32 +28,30 @@ const Home: React.FC = () => {
         state="PR"
       />
       
-      <section className="home-hero" aria-labelledby="hero-title">
+      <section className="home-hero impact-hero" aria-labelledby="hero-title">
         <div className="hero-inner">
-          <div>
-            <p className="hero-eyebrow">Espaço Pai Laércio · Curitiba</p>
-            <h1 id="hero-title">Orientação espiritual com <span>atenção ao seu momento.</span></h1>
-            <p className="hero-description">Conheça nossos serviços de amarração amorosa, união de casais e limpeza espiritual. Atendimento presencial em Curitiba e online para todo o Brasil.</p>
+          <div className="hero-copy">
+            <p className="hero-eyebrow">Pai Laércio · Centro Sagrado Coração de Jesus</p>
+            <h1 id="hero-title">Fé, escuta e orientação <span>para o seu momento.</span></h1>
+            <p className="hero-description">Conheça o atendimento espiritual de Pai Laércio. Um espaço para conversar sobre suas dúvidas, compreender os serviços e decidir com calma.</p>
+            <ul className="hero-service-list"><li>Consultas com búzios e cartas</li><li>Limpeza espiritual e trabalhos de amor</li></ul>
             <div className="hero-actions">
               <a href="https://wa.me/5541984679910" className="primary-action"><MessageCircle aria-hidden="true" /> Conversar no WhatsApp</a>
-              <a href="#servicos" className="secondary-action">Conhecer os serviços <ArrowRight aria-hidden="true" size={20} /></a>
+              <a href="#como-funciona" className="secondary-action">Como funciona <ArrowRight aria-hidden="true" size={20} /></a>
             </div>
+            <p className="hero-visit-note">Presencial em Curitiba · Online · Com hora marcada</p>
           </div>
-          <aside className="hero-help" aria-label="Como entrar em contato">
-            <h2>Vamos conversar com calma?</h2>
-            <ol><li>Escolha ligar ou enviar uma mensagem.</li><li>Conte o que você deseja saber.</li><li>Tire suas dúvidas sobre o atendimento.</li></ol>
-            <a href="tel:+554132228276">Ligar: (41) 3222-8276</a>
-            <p>Atendimento com hora marcada.</p>
-          </aside>
+          <figure className="hero-portrait">
+            <img src="/images/pai-laercio-altar.jpg" width="1024" height="972" alt="Pai Laércio no altar do Centro Sagrado Coração de Jesus, em Curitiba." fetchPriority="high" />
+            <figcaption><strong>Pai Laércio</strong><span>Centro Sagrado Coração de Jesus</span><span>Jardim Social · Curitiba</span></figcaption>
+          </figure>
         </div>
       </section>
+      {currentLocation.pathname === '/' && <ReflectionCard />}
 
+      <ServiceIllustrations />
       <AttendanceGuide />
-      <VideoCTA 
-        highlighted={true}
-        title="Conheça o atendimento espiritual"
-        subtitle="Assista ao vídeo do Espaço Pai Laércio e tire suas dúvidas sobre os serviços."
-      />
+
 
       {/* Prominent SEO Title Section */}
       <section id="servicos" className="py-12 bg-stone-50 border-b border-stone-200">

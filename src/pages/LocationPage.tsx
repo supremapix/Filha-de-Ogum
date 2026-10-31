@@ -6,7 +6,6 @@ import { MapPin, Heart, Star, Shield, Zap, MessageCircle, Phone } from 'lucide-r
 import { motion } from 'motion/react';
 import { FAQAccordion } from '../components/FAQAccordion';
 
-import { VideoCTA } from '../components/VideoCTA';
 
 const LocationPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -62,10 +61,7 @@ const LocationPage: React.FC = () => {
         </div>
       </section>
 
-      <VideoCTA 
-        title={`Orientação espiritual para ${location.name}`}
-        subtitle="Conheça os serviços e tire suas dúvidas com o Espaço Pai Laércio."
-      />
+
 
       {/* Quick Actions */}
       <section className="py-16 bg-white border-b border-stone-100">

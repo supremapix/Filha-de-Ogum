@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Phone, MessageCircle, Mail, ArrowUp, Heart, Menu, X, MapPin } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { ReflectionCard } from './ReflectionCard';
+import { OfficialVideo } from './OfficialVideo';
+import { ShareActions } from './ShareActions';
 import { ContactCard } from './ContactCard';
 
 const navigation = [ ['/', 'Início'], ['/#servicos', 'Serviços'], ['/#locais', 'Onde atendemos'], ['/#perguntas', 'Dúvidas'], ['/#contato', 'Contato'], ['/links', 'Canais oficiais'] ];
@@ -31,19 +33,20 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       <header className="site-header">
         <div className="header-inner">
           <Link to="/" className="site-brand" aria-label="Espaço Pai Laércio — início">
-            <Heart aria-hidden="true" className="brand-heart" size={34} />
-            <span><strong>Espaço Pai Laércio</strong><small>Orientação espiritual</small></span>
+            <img src="/images/centro-sagrado-logo.png" width="1400" height="684" alt="Centro Sagrado Coração de Jesus" />
+            <span className="brand-caption">Pai Laércio · Curitiba</span>
           </Link>
           <button ref={menuButton} type="button" className="menu-toggle" aria-expanded={menuOpen} aria-controls="principal" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />} {menuOpen ? 'Fechar' : 'Menu'}
           </button>
+          <a className="header-phone" href="tel:+554132228276"><Phone aria-hidden="true" size={21} /><span>Prefere ligar?<strong>(41) 3222-8276</strong></span></a>
           <nav id="principal" aria-label="Navegação principal" className={`main-nav ${menuOpen ? 'is-open' : ''}`}>
             {navigation.map(([to, label]) => <Link key={to} to={to} onClick={() => setMenuOpen(false)}>{label}</Link>)}
           </nav>
         </div>
       </header>
-      <ReflectionCard />
-      <main id="conteudo" tabIndex={-1}>{children}<ContactCard /></main>
+      {location.pathname !== '/' && <ReflectionCard />}
+      <main id="conteudo" tabIndex={-1}>{children}<OfficialVideo /><ContactCard /></main>
       <footer className="site-footer" id="rodape">
         <div className="footer-grid">
           <section>
@@ -73,12 +76,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </nav>
           </section>
         </div>
-        <div className="footer-bottom"><p>© 2026 Amarração Amorosa Curitiba.</p><p>Desenvolvido por <a href="https://supremasite.com.br">Suprema Sites Express</a></p></div>
+        <div className="footer-bottom"><p>© 2026 Centro Sagrado Coração de Jesus · Pai Laércio.</p></div>
+        <div className="suprema-credit"><div className="suprema-credit-pill"><span>Desenvolvido com <Heart aria-hidden="true" size={18} /> por</span><a href="https://supremasite.com.br" aria-label="Suprema Sites Express — desenvolvimento de sites"><strong>Suprema Sites Express</strong><img src="/images/suprema-midia-logo.png" width="649" height="185" alt="Suprema Mídia" loading="lazy" /></a></div></div>
       </footer>
-      <nav className="contact-dock" aria-label="Atendimento rápido">
-        <a href="tel:+554132228276"><Phone aria-hidden="true" size={22} /> Ligar</a>
-        <a href="https://wa.me/5541984679910"><MessageCircle aria-hidden="true" size={22} /> WhatsApp</a>
-      </nav>
+      <ShareActions />
     </div>
   );
 };

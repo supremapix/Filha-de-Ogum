@@ -1,9 +1,12 @@
 import React from 'react';
 import { ExternalLink, MessageCircle, Phone } from 'lucide-react';
 import { EnhancedSEO } from '../components/EnhancedSEO';
+import { motion, useReducedMotion } from 'motion/react';
 import { OFFICIAL_CHANNELS } from '../data/channels';
 
-const Links: React.FC = () => (
+const Links: React.FC = () => {
+  const reduceMotion = useReducedMotion();
+  return (
   <div className="links-page">
     <EnhancedSEO title="Links e canais oficiais de Pai Laércio" description="Encontre os canais oficiais de Pai Laércio e do Centro Sagrado Coração de Jesus: contato, vídeos, redes sociais e site oficial em um só lugar." canonical="https://www.amarracaoamorosacuritiba.shop/links" />
     <section className="links-intro">
@@ -16,9 +19,10 @@ const Links: React.FC = () => (
     <section className="links-directory" aria-labelledby="channels-title">
       <h2 id="channels-title">Encontre o canal certo</h2>
       <p>Os links abaixo levam a páginas externas. Você pode usar o botão Voltar do navegador para retornar.</p>
-      {['Contato e agendamento', 'Redes sociais e vídeos', 'Localização e site oficial'].map(category => <section key={category} className="channel-group"><h2>{category}</h2><ul>{OFFICIAL_CHANNELS.filter(channel => channel.category === category).map(channel => <li key={channel.url}><h3>{channel.name}</h3><p>{channel.description}</p><a href={channel.url}>{channel.action}<ExternalLink aria-hidden="true" size={20} /></a></li>)}</ul></section>)}
+      {['Contato e agendamento', 'Redes sociais e vídeos', 'Localização e site oficial'].map(category => <section key={category} className="channel-group"><h2>{category}</h2><ul>{OFFICIAL_CHANNELS.filter(channel => channel.category === category).map(channel => <motion.li key={channel.url} whileHover={reduceMotion === false ? { y: -2 } : undefined} transition={{ duration: .15 }}><h3>{channel.name}</h3><p>{channel.description}</p><a href={channel.url}>{channel.action}<ExternalLink aria-hidden="true" size={20} /></a></motion.li>)}</ul></section>)}
     </section>
     <aside className="links-intro"><h2>Use os canais com atenção</h2><p>Confira o nome do perfil e o endereço antes de enviar informações. Não compartilhe senhas ou dados bancários por mensagens. Se precisar de ajuda para usar o celular, uma pessoa de sua confiança pode auxiliar você a abrir os links, preservando sua privacidade.</p></aside>
   </div>
 );
+};
 export default Links;

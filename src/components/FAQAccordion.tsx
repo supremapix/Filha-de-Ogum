@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import React from 'react';
 
 const faqs = [
   {
     q: "A amarração amorosa realmente funciona?",
-    a: "Sim, quando realizada por um especialista como o Pai Laercio, que utiliza rituais ancestrais e materiais consagrados. Os resultados dependem da fé e do seguimento das orientações espirituais."
+    a: "Práticas espirituais envolvem crenças pessoais. Não há garantia de reconciliação nem de mudança dos sentimentos ou das escolhas de outra pessoa."
   },
   {
     q: "Quanto tempo demora para ver os resultados?",
-    a: "Cada caso é único, mas muitos consulentes relatam mudanças significativas em até 24 horas ou poucos dias após o ritual ser concluído."
+    a: "Não prometemos resultados nem prazos. Converse durante a consulta para esclarecer o que o atendimento envolve e quais são seus limites."
   },
   {
     q: "O trabalho é sigiloso?",
-    a: "Absolutamente. O sigilo é um dos nossos pilares. Sua identidade e seu caso são mantidos em total discrição, sem qualquer exposição."
+    a: "Entre em contato para esclarecer como suas informações serão tratadas. Compartilhe apenas os dados necessários ao atendimento."
   },
   {
     q: "Quais materiais são usados nos rituais?",
@@ -25,43 +23,22 @@ const faqs = [
   },
   {
     q: "Existe algum perigo em fazer amarração?",
-    a: "Trabalhamos apenas com a alta magia para o bem e união. Nossos rituais são seguros e visam a felicidade e harmonia do casal, sem causar danos a ninguém."
+    a: "Peça explicações sobre qualquer prática antes de concordar. A orientação espiritual não substitui acompanhamento médico, psicológico ou jurídico, e deve respeitar a autonomia de todas as pessoas."
   }
 ];
 
-export const FAQAccordion: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  return (
-    <section className="py-20 bg-stone-50">
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-stone-900">Perguntas Frequentes (FAQ)</h2>
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div key={index} className="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm">
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-stone-50 transition-colors"
-              >
-                <span className="text-lg font-bold text-stone-800">{faq.q}</span>
-                {openIndex === index ? <ChevronUp className="text-red-700" /> : <ChevronDown className="text-stone-400" />}
-              </button>
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className="px-6 pb-6 text-stone-600 leading-relaxed"
-                  >
-                    {faq.a}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
-        </div>
+export const FAQAccordion: React.FC = () => (
+  <section id="perguntas" className="py-20 bg-stone-50">
+    <div className="max-w-4xl mx-auto px-4">
+      <h2 className="text-4xl font-bold mb-8 text-stone-900">Perguntas frequentes</h2>
+      <div className="space-y-4">
+        {faqs.map(faq => (
+          <details key={faq.q} className="faq-item bg-white rounded-xl border border-stone-300">
+            <summary className="p-5 font-bold cursor-pointer">{faq.q}</summary>
+            <p className="px-5 pb-5 text-stone-700">{faq.a}</p>
+          </details>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);

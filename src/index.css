@@ -124,3 +124,91 @@
 .dark-gradient {
   @apply bg-gradient-to-b from-stone-900 to-black;
 }
+
+/* Comfortable reading and predictable controls, at every age. */
+html { font-size: 112.5%; scroll-padding-top: 1rem; }
+body { line-height: 1.65; }
+a, button, input, select, textarea { touch-action: manipulation; }
+a, button { -webkit-tap-highlight-color: transparent; }
+button, input, select, textarea { font: inherit; }
+:focus-visible { outline: 3px solid #2563eb !important; outline-offset: 4px; }
+main:focus { outline: none; }
+svg { flex-shrink: 0; }
+p, h1, h2, h3, a { overflow-wrap: anywhere; }
+.skip-link { position: absolute; top: -100px; left: 1rem; z-index: 100; background: white; color: #171717; padding: 1rem; }
+.skip-link:focus { top: 1rem; }
+.site-header { background: #fff; border-bottom: 1px solid #d6d3d1; }
+.header-inner { max-width: 1200px; margin: auto; padding: 1rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+.site-brand { display: flex; align-items: center; gap: .75rem; min-width: 0; }
+.site-brand strong { display: block; font-size: 1.2rem; line-height: 1.3; }
+.site-brand small { display: block; color: #57534e; font-size: .9rem; }
+.brand-heart { color: #991b1b; fill: #991b1b; }
+.menu-toggle { display: flex; gap: .5rem; align-items: center; min-height: 52px; border: 1px solid #a8a29e; border-radius: .6rem; padding: .5rem .8rem; font-weight: 700; background: white; }
+.main-nav { display: none; width: 100%; }
+.main-nav.is-open { display: grid; gap: .35rem; }
+.main-nav a { display: flex; align-items: center; min-height: 52px; padding: .6rem 1rem; border-radius: .5rem; color: #292524; font-weight: 600; }
+.main-nav a:hover { background: #fef2f2; color: #991b1b; }
+.home-hero { background: #fff8f2; border-bottom: 1px solid #e7ded6; padding: clamp(2rem, 7vw, 5rem) 1rem; }
+.hero-inner { max-width: 1120px; margin: auto; display: grid; gap: 2rem; }
+.hero-eyebrow { color: #8f241e; font-weight: 700; margin-bottom: 1rem; }
+.home-hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.15; letter-spacing: -.03em; max-width: 18ch; margin-bottom: 1.25rem; }
+.home-hero h1 span { color: #991b1b; }
+.hero-description { max-width: 55ch; color: #44403c; font-size: 1.1rem; }
+.hero-actions { display: grid; gap: .8rem; margin-top: 1.75rem; }
+.hero-actions a { min-height: 58px; display: flex; justify-content: center; align-items: center; gap: .6rem; padding: .8rem 1rem; border-radius: .7rem; font-weight: 700; text-align: center; }
+.primary-action { background: #166534; color: white; }
+.secondary-action { background: white; color: #7f1d1d; border: 2px solid #991b1b; }
+.hero-help { padding: 1.5rem; background: white; border: 1px solid #e7ded6; border-radius: 1rem; align-self: center; }
+.hero-help h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
+.hero-help ol { list-style: decimal; padding-left: 1.4rem; }
+.hero-help li { margin-bottom: .8rem; }
+.hero-help a { display: inline-flex; padding: .7rem 0; color: #7f1d1d; text-decoration: underline; }
+.site-footer { background: #211c1b; color: #eee8e5; padding: 3rem 1rem 7rem; }
+.footer-grid { max-width: 1120px; margin: auto; display: grid; gap: 2.5rem; }
+.site-footer h2 { font-size: 1.2rem; font-weight: 700; color: white; margin-bottom: 1rem; }
+.site-footer h3 { margin-top: .8rem; font-weight: 700; }
+.site-footer p { margin-bottom: 1rem; }
+.site-footer a { text-decoration: underline; text-underline-offset: 4px; }
+.footer-contact, .site-footer nav a { display: flex; align-items: center; gap: .6rem; min-height: 52px; padding: .6rem 0; }
+.email-link { align-items: flex-start; }
+.email-link span { min-width: 0; overflow-wrap: anywhere; }
+.footer-bottom { max-width: 1120px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid #57534e; font-size: .9rem; }
+.contact-dock { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; padding: .6rem 1rem calc(.6rem + env(safe-area-inset-bottom)); background: #fff; border-top: 1px solid #d6d3d1; }
+.contact-dock a { min-height: 52px; display: flex; justify-content: center; align-items: center; gap: .5rem; font-weight: 700; color: #7f1d1d; border: 2px solid #991b1b; border-radius: .6rem; }
+.contact-dock a:last-child { background: #166534; border-color: #166534; color: white; }
+@media (min-width: 900px) {
+ .menu-toggle { display: none; }
+ .main-nav, .main-nav.is-open { display: flex; width: auto; }
+ .hero-inner { grid-template-columns: 1.5fr 1fr; gap: 4rem; }
+ .hero-actions { display: flex; flex-wrap: wrap; }
+ .footer-grid { grid-template-columns: 1fr 1.2fr 1fr; }
+ .contact-dock { position: static; grid-template-columns: repeat(2, minmax(0, 280px)); justify-content: center; }
+ .site-footer { padding-bottom: 2rem; }
+}
+/* Stop attention-seeking motion; content stays readable without chasing it. */
+.animate-pulse, .animate-bounce, .animate-heartbeat, .animate-marquee, .animate-scroll-vertical { animation: none !important; }
+main .text-xs, main .text-sm { font-size: 1rem; }
+main .text-stone-400, main .text-stone-500 { color: #57534e; }
+main .bg-stone-900 .text-stone-400, main .bg-stone-900 .text-stone-500 { color: #d6d3d1; }
+main a, main button { min-height: 48px; }
+main .bg-green-600 { background-color: #166534; }
+main section { scroll-margin-top: 1rem; }
+@media (max-width: 640px) {
+ main .py-20 { padding-block: 2.5rem; }
+ main .p-10, main .p-8 { padding: 1.1rem; }
+ main .text-5xl, main .text-4xl { font-size: 2rem; line-height: 1.25; }
+ main .text-3xl { font-size: 1.5rem; }
+ main .px-10, main .px-12 { padding-inline: 1rem; }
+ main .grid-cols-2 { grid-template-columns: minmax(0, 1fr); }
+ main .text-justify { text-align: left; }
+ main .max-h-\[400px\] { max-height: none; overflow: visible; }
+ main form button { font-size: 1.1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+ *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+.location-group summary { min-height: 56px; cursor: pointer; padding: .8rem; font-weight: 700; color: #7f1d1d; border: 1px solid #a8a29e; border-radius: .5rem; margin-bottom: 1rem; }
+.location-group a { display: flex; align-items: center; }
+@media (max-width: 380px) { .brand-heart { display: none; } .site-brand strong { font-size: 1rem; } .site-brand small { font-size: .8rem; } }
+html { scroll-padding-bottom: calc(6rem + env(safe-area-inset-bottom)); }
+a, button, input, select, textarea, summary { scroll-margin-bottom: 6rem; }

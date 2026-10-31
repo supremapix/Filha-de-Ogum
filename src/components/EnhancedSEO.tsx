@@ -18,98 +18,39 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   state = 'PR',
   type = 'website'
 }) => {
-  const fullTitle = `${title} | Espaço Pai Laercio`;
+  const fullTitle = title.includes("Espaço Pai Laercio") ? title : `${title} | Espaço Pai Laercio`;
   const siteUrl = "https://www.amarracaoamorosacuritiba.shop";
-  const logoUrl = "https://img.supremamidia.com/suprema-img.png";
-
-  const stateNames: Record<string, string> = {
-    'PR': 'Paraná',
-    'SC': 'Santa Catarina',
-    'RS': 'Rio Grande do Sul',
-    'GO': 'Goiás',
-    'DF': 'Distrito Federal'
-  };
-
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Filha de Ogum - Alta Magia e Amarração Amorosa",
-    "alternateName": "Suprema Mídia - Consultoria Espiritual",
-    "image": logoUrl,
-    "@id": siteUrl,
+    "@id": `${siteUrl}/#organization`,
+    "name": "Espaço Pai Laercio",
     "url": siteUrl,
     "telephone": "+55 41 3222-8276",
-    "priceRange": "$$",
+    "email": "contato@amarracaoamorosacuritiba.shop",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Rua Frei Orlando, 437 - Jardim Social",
-      "addressLocality": locationName || "Curitiba",
-      "addressRegion": state,
+      "addressLocality": "Curitiba",
+      "addressRegion": "PR",
       "postalCode": "82530-040",
       "addressCountry": "BR"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -25.4222,
-      "longitude": -49.2319
-    },
-    "serviceArea": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": -25.4222,
-        "longitude": -49.2319
-      },
-      "geoRadius": "1000000"
-    },
-    "areaServed": [
-      { "@type": "State", "name": "Paraná" },
-      { "@type": "State", "name": "Santa Catarina" },
-      { "@type": "State", "name": "Rio Grande do Sul" },
-      { "@type": "State", "name": "Goiás" },
-      { "@type": "State", "name": "Distrito Federal" },
-      {
-        "@type": "City",
-        "name": locationName || "Curitiba"
-      }
-    ],
+    "areaServed": { "@type": "Country", "name": "Brasil" },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Serviços Espirituais Suprema Mídia",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Amarração Amorosa",
-            "description": "Trabalhos de união de casais e reconciliação amorosa com alta magia."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Limpeza Espiritual",
-            "description": "Afastamento de energias negativas e abertura de caminhos."
-          }
-        }
-      ]
+      "name": "Serviços do Espaço Pai Laercio",
+      "itemListElement": ["Amarração Amorosa", "União de Casais", "Limpeza Espiritual"].map(name => ({
+        "@type": "Offer", "itemOffered": { "@type": "Service", name }
+      }))
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-      ],
-      "opens": "10:00",
-      "closes": "23:30"
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "10:00", "closes": "23:30"
     },
-    "sameAs": [
-      "https://wa.me/5541984679910",
-      "https://wa.me/5541985223500",
-      "https://wa.me/5541995528940",
-      "https://www.espacopailaercio.com.br"
-    ],
-    "description": description
+    "sameAs": ["https://www.espacopailaercio.com.br"],
+    "description": "Orientação espiritual, amarração amorosa, união de casais e limpeza espiritual. Atendimento presencial em Curitiba e online."
   };
 
   return (
@@ -123,29 +64,24 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
       
       {/* Geolocation */}
-      <meta name="geo.region" content={`BR-${state}`} />
-      <meta name="geo.placename" content={locationName || "Curitiba"} />
-      <meta name="geo.position" content="-25.4290;-49.2671" />
-      <meta name="ICBM" content="-25.4290, -49.2671" />
+      <meta name="geo.region" content="BR-PR" />
+      <meta name="geo.placename" content="Curitiba" />
       
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
+      <meta property="og:type" content={type === "article" ? "article" : "website"} />
       <meta property="og:url" content={canonical} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={logoUrl} />
 
       {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:url" content={canonical} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={logoUrl} />
 
       {/* Resource Hints */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="preconnect" href="https://img.supremamidia.com" />
       
       {/* Font Optimization */}
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />

@@ -70,8 +70,8 @@ const ALL_LOCATIONS = [
 function getMetadata(urlPath: string) {
   if (urlPath === "/" || urlPath === "") {
     return {
-      title: "Amarração Amorosa em Curitiba, Paraná, Santa Catarina, Rio Grande do Sul e Goiás - Filha de Ogum",
-      description: "Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Sul e Centro-Oeste. Resultados garantidos e sigilo total. Fale com Filha de Ogum."
+      title: "Amarração Amorosa em Curitiba, Paraná, Santa Catarina, Rio Grande do Sul e Goiás - Espaço Pai Laercio",
+      description: "Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Sul e Centro-Oeste. Atendimento online e presencial em Curitiba. Fale com Espaço Pai Laercio."
     };
   }
 
@@ -88,14 +88,14 @@ function getMetadata(urlPath: string) {
       };
       const stateName = stateNames[location.state || 'PR'];
       return {
-        title: `Amarração Amorosa em ${location.name} - Filha de Ogum`,
-        description: `Precisa de Amarração Amorosa em ${location.name}? Filha de Ogum é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Sigilo absoluto e resultados.`
+        title: `Amarração Amorosa em ${location.name} - Espaço Pai Laercio`,
+        description: `Precisa de Amarração Amorosa em ${location.name}? Espaço Pai Laercio é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Informações sobre os serviços e atendimento.`
       };
     }
   }
 
   return {
-    title: "Filha de Ogum - Alta Magia e Amarração Amorosa",
+    title: "Espaço Pai Laercio - Alta Magia e Amarração Amorosa",
     description: "Trabalhos espirituais para o amor, limpeza espiritual e búzios."
   };
 }

@@ -8,9 +8,9 @@ interface VideoCTAProps {
   highlighted?: boolean;
 }
 
-export const VideoCTA: React.FC<VideoCTAProps> = ({ 
-  title = "Recupere o seu Amor Hoje Mesmo", 
-  subtitle = "Trabalhos espirituais poderosos com resultados garantidos e sigilo absoluto.",
+export const VideoCTA: React.FC<VideoCTAProps> = ({
+  title = "Conheça o atendimento espiritual",
+  subtitle = "Informações sobre os serviços do Espaço Pai Laercio. Sem promessa de resultados.",
   highlighted = false
 }) => {
   const whatsappNumber = "5541984679910";
@@ -20,7 +20,7 @@ export const VideoCTA: React.FC<VideoCTAProps> = ({
     <section className={`py-16 px-4 ${highlighted ? 'bg-zinc-950 text-white' : 'bg-white text-zinc-900'}`}>
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -33,7 +33,7 @@ export const VideoCTA: React.FC<VideoCTAProps> = ({
             <p className="text-xl opacity-80 leading-relaxed">
               {subtitle}
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <motion.a
                 href={whatsappLink}
@@ -44,9 +44,9 @@ export const VideoCTA: React.FC<VideoCTAProps> = ({
                 className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg shadow-emerald-900/20 transition-all group"
               >
                 <MessageCircle className="w-6 h-6 group-hover:animate-bounce" />
-                Agendar Consulta Grátis
+                Consultar atendimento
               </motion.a>
-              
+
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -54,26 +54,27 @@ export const VideoCTA: React.FC<VideoCTAProps> = ({
                 className="flex items-center gap-2 text-sm font-medium opacity-70 italic"
               >
                 <Heart className="w-4 h-4 text-red-500 fill-red-500" />
-                Mais de 15.000 casais unidos
+                Tire suas dúvidas antes de decidir
               </motion.div>
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative aspect-[9/16] max-w-[350px] mx-auto lg:ml-auto rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border-4 border-zinc-800"
+            className="relative w-full aspect-[9/16] max-w-[350px] mx-auto lg:ml-auto rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border-4 border-zinc-800"
           >
             <iframe
-              src="https://www.youtube.com/embed/qz_ZBHSg8d0?autoplay=1&mute=1&loop=1&playlist=qz_ZBHSg8d0"
+              src="https://www.youtube.com/embed/qz_ZBHSg8d0"
               title="Espaço Pai Laercio - Amarração Amorosa"
               className="absolute inset-0 w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              loading="lazy"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            
+
             <div className="absolute inset-0 pointer-events-none border-[12px] border-black/10 rounded-2xl"></div>
           </motion.div>
         </div>

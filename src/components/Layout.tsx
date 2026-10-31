@@ -1,180 +1,79 @@
-import React, { useEffect, useState } from 'react';
-import { Phone, MessageCircle, Mail, ArrowUp, Heart } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Phone, MessageCircle, Mail, ArrowUp, Heart, Menu, X, MapPin } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
+const navigation = [ ['/', 'Início'], ['/#servicos', 'Serviços'], ['/#locais', 'Onde atendemos'], ['/#perguntas', 'Dúvidas'], ['/#contato', 'Contato'] ];
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [showBackToTop, setShowBackToTop] = useState(false);
-
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const location = useLocation();
   useEffect(() => {
-    const handleScroll = () => setShowBackToTop(window.scrollY > 400);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
+    setMenuOpen(false);
+    if (location.hash) {
+      requestAnimationFrame(() => {
+        const target = document.getElementById(location.hash.slice(1));
+        if (target) { target.tabIndex = -1; target.focus({ preventScroll: true }); target.scrollIntoView(); }
+      });
+    } else window.scrollTo(0, 0);
+  }, [location.pathname, location.hash, location.key]);
+  useEffect(() => {
+    const close = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && menuOpen) { setMenuOpen(false); menuButton.current?.focus(); }
+    };
+    document.addEventListener('keydown', close);
+    return () => document.removeEventListener('keydown', close);
+  }, [menuOpen]);
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="relative z-50 bg-white/90 backdrop-blur-md border-b border-stone-200 overflow-hidden">
-        {/* Header Background Image */}
-        <div className="absolute inset-0 z-[-1] opacity-10">
-          <img 
-            src="https://claudia.abril.com.br/wp-content/uploads/2024/12/amarracoes-amorosas-porque-nao-fazer.jpg?quality=70&strip=info&w=1280&h=720&crop=1" 
-            alt="" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-6 group">
-            <div className="relative flex items-center justify-center w-16 h-16">
-              <motion.div 
-                className="premium-heart animate-heartbeat scale-75"
-                whileHover={{ scale: 0.9 }}
-              >
-                <div className="premium-shine"></div>
-              </motion.div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-2xl leading-tight text-stone-900 group-hover:text-red-700 transition-colors">Espaço Pai Laercio</span>
-              <span className="text-[10px] text-stone-500 uppercase tracking-[0.4em] font-bold">Alta Magia e Orientação Espiritual</span>
-            </div>
+    <div className="site-shell">
+      <a className="skip-link" href="#conteudo">Ir para o conteúdo</a>
+      <header className="site-header">
+        <div className="header-inner">
+          <Link to="/" className="site-brand" aria-label="Espaço Pai Laercio — início">
+            <Heart aria-hidden="true" className="brand-heart" size={34} />
+            <span><strong>Espaço Pai Laercio</strong><small>Orientação espiritual</small></span>
           </Link>
-
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm font-medium hover:text-red-700 transition-colors">Início</Link>
-            <a href="#servicos" className="text-sm font-medium hover:text-red-700 transition-colors">Serviços</a>
-            <a href="#contato" className="text-sm font-medium hover:text-red-700 transition-colors">Contato</a>
+          <button ref={menuButton} type="button" className="menu-toggle" aria-expanded={menuOpen} aria-controls="principal" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />} {menuOpen ? 'Fechar' : 'Menu'}
+          </button>
+          <nav id="principal" aria-label="Navegação principal" className={`main-nav ${menuOpen ? 'is-open' : ''}`}>
+            {navigation.map(([to, label]) => <Link key={to} to={to} onClick={() => setMenuOpen(false)}>{label}</Link>)}
           </nav>
-
-          <div className="flex items-center gap-4">
-            <a href="tel:+554132228276" className="hidden lg:flex flex-col items-end group">
-              <span className="text-[10px] text-stone-500 uppercase font-bold tracking-widest">Ligue Agora</span>
-              <span className="text-xl font-black text-stone-900 group-hover:text-red-700 transition-colors">+55 (41) 3222-8276</span>
-            </a>
-            <a href="tel:+554132228276" className="p-3 bg-red-700 text-white rounded-full hover:bg-red-800 transition-all shadow-lg lg:hidden">
-              <Phone size={24} />
-            </a>
-            <a href="https://wa.me/5541984679910" className="bg-green-600 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-green-700 transition-all shadow-xl shadow-green-200 border-2 border-green-400 animate-pulse">
-              <MessageCircle size={24} />
-              <span className="text-lg font-black hidden sm:inline">WHATSAPP</span>
-            </a>
-          </div>
         </div>
       </header>
-
-      {/* Main Content */}
-      <main className="flex-grow">
-        {children}
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-8">
-                <div className="relative flex items-center justify-center w-16 h-16">
-                  <motion.div className="premium-heart animate-heartbeat scale-75">
-                    <div className="premium-shine"></div>
-                  </motion.div>
-                </div>
-                <h3 className="text-white font-bold text-3xl">Espaço Pai Laercio</h3>
-              </div>
-              <p className="text-sm leading-relaxed text-stone-400">
-                Especialista em rituais de amarração amorosa, união de casais e limpeza espiritual. 
-                Atendimento discreto e personalizado com mais de 20 anos de experiência.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-white font-bold text-lg mb-4">Nossos Contatos</h3>
-              <ul className="space-y-4 text-sm">
-                <li className="flex flex-col gap-1">
-                  <div className="flex items-center gap-3">
-                    <Phone size={20} className="text-red-500" />
-                    <span className="font-bold text-white">Fixo: +55 (41) 3222-8276</span>
-                  </div>
-                </li>
-                <li className="flex flex-col gap-2">
-                  <div className="flex items-center gap-3">
-                    <MessageCircle size={20} className="text-green-500" />
-                    <span className="font-bold text-white uppercase text-xs tracking-tighter">WhatsApp Oficiais:</span>
-                  </div>
-                  <div className="flex flex-col gap-1 pl-8">
-                    <a href="https://wa.me/5541984679910" className="hover:text-white transition-colors text-base font-bold text-stone-200">+55 (41) 98467-9910</a>
-                    <a href="https://wa.me/5541985223500" className="hover:text-white transition-colors text-base font-bold text-stone-200">+55 (41) 98522-3500</a>
-                    <a href="https://wa.me/5541995528940" className="hover:text-white transition-colors text-base font-bold text-stone-200">+55 (41) 99552-8940</a>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="mt-1"><ArrowUp size={16} className="text-red-500 rotate-90" /></div>
-                  <div className="flex flex-col">
-                    <span className="text-stone-300 font-bold">Endereço:</span>
-                    <span className="text-stone-400">Rua Frei Orlando, 437 - Jardim Social<br/>Curitiba - PR, 82530-040</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-white font-bold text-lg mb-4">Links Úteis</h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link to="/sitemap" className="hover:text-white transition-colors">Mapa do Site</Link></li>
-                <li><a href="https://www.espacopailaercio.com.br" target="_blank" rel="noopener noreferrer" className="text-red-500 font-bold hover:underline">Site Oficial: Espaço Pai Laercio</a></li>
-                <li><Link to="/" className="hover:text-white transition-colors">Política de Privacidade</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-stone-800 flex flex-col md:flex-row items-center justify-between gap-6 text-xs">
-            <p>© 2026 Amarração Amorosa Curitiba. Todos os direitos reservados.</p>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <span>Desenvolvido</span>
-                <Heart size={16} className="text-red-600 fill-red-600 animate-heartbeat" />
-                <span>por</span>
-                <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" className="text-white hover:underline font-bold">
-                  Suprema Sites Express
-                </a>
-              </div>
-              <img 
-                src="https://img.supremamidia.com/suprema-img.png" 
-                alt="Suprema Mídia" 
-                className="h-8 w-auto grayscale hover:grayscale-0 transition-all"
-              />
-            </div>
-          </div>
+      <main id="conteudo" tabIndex={-1}>{children}</main>
+      <footer className="site-footer" id="rodape">
+        <div className="footer-grid">
+          <section>
+            <h2>Espaço Pai Laercio</h2>
+            <p>Orientação espiritual, amarração amorosa, união de casais e limpeza espiritual.</p>
+            <p>Atendimento presencial em Curitiba e online.</p>
+            <a className="footer-contact" href="https://www.espacopailaercio.com.br">Conheça o site oficial <span aria-hidden="true">↗</span></a>
+          </section>
+          <section>
+            <h2>Fale conosco</h2>
+            <a className="footer-contact" href="tel:+554132228276"><Phone aria-hidden="true" /> Ligar: (41) 3222-8276</a>
+            <h3>WhatsApp</h3>
+            {['98467-9910', '98522-3500', '99552-8940'].map(number => <a className="footer-contact" key={number} href={`https://wa.me/5541${number.replace('-', '')}`}><MessageCircle aria-hidden="true" /> (41) {number}</a>)}
+            <a className="footer-contact email-link" href="mailto:contato@amarracaoamorosacuritiba.shop"><Mail aria-hidden="true" /><span>contato@amarracaoamorosacuritiba.shop</span></a>
+          </section>
+          <section>
+            <h2>Endereço e horário</h2>
+            <p><MapPin aria-hidden="true" size={22} /> Rua Frei Orlando, 437<br />Jardim Social, Curitiba — PR<br />CEP 82530-040</p>
+            <p>Segunda a domingo<br />das 10h às 23h30</p>
+            <nav aria-label="Navegação do rodapé">
+              <Link to="/#servicos">Ver serviços</Link>
+              <Link to="/#perguntas">Perguntas frequentes</Link>
+              <Link to="/sitemap">Mapa do site</Link>
+              <a href="#conteudo"><ArrowUp aria-hidden="true" size={20} /> Voltar ao início da página</a>
+            </nav>
+          </section>
         </div>
+        <div className="footer-bottom"><p>© 2026 Amarração Amorosa Curitiba.</p><p>Desenvolvido por <a href="https://supremasite.com.br">Suprema Sites Express</a></p></div>
       </footer>
-
-      {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 left-6 z-40 flex flex-col gap-3">
-        <a href="mailto:contato@amarracaoamorosacuritiba.shop" className="w-12 h-12 bg-stone-800 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-          <Mail size={20} />
-        </a>
-      </div>
-
-      <AnimatePresence>
-        {showBackToTop && (
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            onClick={scrollToTop}
-            className="fixed bottom-24 right-6 z-40 w-12 h-12 bg-white text-stone-900 rounded-full flex items-center justify-center shadow-xl border border-stone-200 hover:scale-110 transition-transform"
-          >
-            <ArrowUp size={20} />
-          </motion.button>
-        )}
-      </AnimatePresence>
-
-      <a 
-        href="https://wa.me/5541984679910" 
-        className="fixed bottom-6 right-6 z-40 w-20 h-20 bg-green-500 text-white rounded-full flex flex-col items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce border-4 border-white"
-      >
-        <MessageCircle size={32} />
-        <span className="text-[10px] font-black">WHATSAPP</span>
-      </a>
+      <nav className="contact-dock" aria-label="Atendimento rápido">
+        <a href="tel:+554132228276"><Phone aria-hidden="true" size={22} /> Ligar</a>
+        <a href="https://wa.me/5541984679910"><MessageCircle aria-hidden="true" size={22} /> WhatsApp</a>
+      </nav>
     </div>
   );
 };

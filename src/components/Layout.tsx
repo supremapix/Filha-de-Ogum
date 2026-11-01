@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Phone, MessageCircle, Mail, ArrowUp, Heart, Menu, X, MapPin } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { ReflectionCard } from './ReflectionCard';
+import { ClaritySupport } from './ClaritySupport';
+import { ReflectionQuiz } from './ReflectionQuiz';
 import { OfficialVideo } from './OfficialVideo';
 import { ShareActions } from './ShareActions';
 import { ContactCard } from './ContactCard';
@@ -46,7 +48,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         </div>
       </header>
       {location.pathname !== '/' && <ReflectionCard />}
-      <main id="conteudo" tabIndex={-1}>{children}<OfficialVideo /><ContactCard /></main>
+      <main id="conteudo" tabIndex={-1}>{children}<ClaritySupport /><ReflectionQuiz /><OfficialVideo /><ContactCard /></main>
       <footer className="site-footer" id="rodape">
         <div className="footer-grid">
           <section>

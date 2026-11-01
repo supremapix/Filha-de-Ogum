@@ -70,8 +70,8 @@ const ALL_LOCATIONS = [
 function getMetadata(urlPath: string) {
   if (urlPath === "/" || urlPath === "") {
     return {
-      title: "Amarração Amorosa em Curitiba, Paraná, Santa Catarina, Rio Grande do Sul e Goiás - Espaço Pai Laercio",
-      description: "Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Sul e Centro-Oeste. Atendimento online e presencial em Curitiba. Fale com Espaço Pai Laercio."
+      title: "Amarração Amorosa em Curitiba, Paraná, Santa Catarina, Rio Grande do Sul e Goiás - Espaço Pai Laércio",
+      description: "Especialista em Amarração Amorosa, Reconciliação de Casais e Alta Magia no Sul e Centro-Oeste. Atendimento online e presencial em Curitiba. Fale com Espaço Pai Laércio."
     };
   }
 
@@ -88,14 +88,14 @@ function getMetadata(urlPath: string) {
       };
       const stateName = stateNames[location.state || 'PR'];
       return {
-        title: `Amarração Amorosa em ${location.name} - Espaço Pai Laercio`,
-        description: `Precisa de Amarração Amorosa em ${location.name}? Espaço Pai Laercio é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Informações sobre os serviços e atendimento.`
+        title: `Amarração Amorosa em ${location.name} - Espaço Pai Laércio`,
+        description: `Precisa de Amarração Amorosa em ${location.name}? Espaço Pai Laércio é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Informações sobre os serviços e atendimento.`
       };
     }
   }
 
   return {
-    title: "Espaço Pai Laercio - Alta Magia e Amarração Amorosa",
+    title: "Espaço Pai Laércio - Alta Magia e Amarração Amorosa",
     description: "Trabalhos espirituais para o amor, limpeza espiritual e búzios."
   };
 }
@@ -112,6 +112,9 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
+    for (const route of ["/", "/links", "/sitemap"]) {
+      app.get(route, (_req, res) => res.sendFile(path.join(__dirname, "dist", route === "/" ? "index.html" : `${route.slice(1)}/index.html`)));
+    }
     app.use(express.static(path.join(__dirname, "dist"), { index: false }));
   }
 
@@ -161,7 +164,7 @@ async function startServer() {
   });
 
   app.get("*", async (req, res, next) => {
-    const url = req.originalUrl;
+    const url = new URL(req.originalUrl, "https://www.amarracaoamorosacuritiba.shop").pathname;
     
     // Ignore asset requests that might have fallen through
     // This includes common static file extensions
@@ -178,120 +181,45 @@ async function startServer() {
         template = fs.readFileSync(path.resolve(__dirname, "index.html"), "utf-8");
         template = await vite.transformIndexHtml(url, template);
       } else {
-        template = fs.readFileSync(path.resolve(__dirname, "dist", "index.html"), "utf-8");
+        template = fs.readFileSync(path.resolve(__dirname, "dist", "spa.html"), "utf-8");
       }
 
-      // Inject Meta Tags for SEO (Pre-rendering)
-      const locationMatch = ALL_LOCATIONS.find(l => url.includes(l.id));
-      const locationName = locationMatch ? locationMatch.name : "Curitiba";
-      const stateCode = locationMatch?.state || "PR";
-      
+      // Keep the fallback server consistent with the verified public identity.
       const schemaMarkup = {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Espaço Pai Laercio - Amarração Amorosa",
-        "alternateName": "Suprema Mídia - Consultoria Espiritual",
-        "image": "https://img.supremamidia.com/suprema-img.png",
-        "@id": "https://www.amarracaoamorosacuritiba.shop",
-        "telephone": "+554132228276",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Rua Frei Orlando, 437 - Jardim Social",
-          "addressLocality": locationName,
-          "addressRegion": stateCode,
-          "postalCode": "82530-040",
-          "addressCountry": "BR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -25.4222,
-          "longitude": -49.2319
-        },
-        "serviceArea": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": -25.4222,
-            "longitude": -49.2319
-          },
-          "geoRadius": "1000000"
-        },
-        "areaServed": [
-          { "@type": "State", "name": "Paraná" },
-          { "@type": "State", "name": "Santa Catarina" },
-          { "@type": "State", "name": "Rio Grande do Sul" },
-          { "@type": "State", "name": "Goiás" },
-          { "@type": "State", "name": "Distrito Federal" },
-          {
-            "@type": "City",
-            "name": locationName
-          }
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Serviços Espirituais Espaço Pai Laercio",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Amarração Amorosa",
-                "description": "Trabalhos de união de casais e reconciliação amorosa com alta magia."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Limpeza Espiritual",
-                "description": "Afastamento de energias negativas e abertura de caminhos."
-              }
-            }
-          ]
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-          ],
-          "opens": "10:00",
-          "closes": "23:30"
-        },
-        "sameAs": [
-          "https://wa.me/5541984679910",
-          "https://wa.me/5541985223500",
-          "https://wa.me/5541995528940",
-          "https://www.espacopailaercio.com.br"
-        ]
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "@id": "https://www.amarracaoamorosacuritiba.shop/#organization",
+        "name": "Centro Sagrado Coração de Jesus", "alternateName": ["Pai Laércio", "Espaço Pai Laércio"],
+        "url": "https://www.amarracaoamorosacuritiba.shop",
+        "logo": "https://www.espacopailaercio.com.br/images/logo-transparent.png",
+        "telephone": "+5541984679910", "email": "laercioadriano@yahoo.com.br",
+        "address": { "@type": "PostalAddress", "streetAddress": "Rua Frei Orlando, 437 - Jardim Social", "addressLocality": "Curitiba", "addressRegion": "PR", "addressCountry": "BR" },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "sameAs": ["https://www.espacopailaercio.com.br/", "https://www.youtube.com/@CENTROSAGRADO", "https://www.instagram.com/centro.sagrado/", "https://www.facebook.com/Pailaercio/"]
       };
 
+      const escapeAttribute = (value: string) => value.replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[character]!));
       const metaTags = `
-        <title>${metadata.title} | Espaço Pai Laercio</title>
-        <meta name="description" content="${metadata.description}">
-        <link rel="canonical" href="${canonical}">
+        <title>${escapeAttribute(metadata.title)} | Espaço Pai Laércio</title>
+        <meta name="description" content="${escapeAttribute(metadata.description)}">
+        <link rel="canonical" href="${escapeAttribute(canonical)}">
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
         <meta name="google-site-verification" content="5XMamsK6WwP7Yfw9IBCR0pdnOtaRh4822VJm5zDg1So" />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
         
         <!-- Geolocation -->
-        <meta name="geo.region" content="BR-${stateCode}">
-        <meta name="geo.placename" content="${locationName}">
-        <meta name="geo.position" content="-25.4290;-49.2671">
-        <meta name="ICBM" content="-25.4290, -49.2671">
+        <meta name="geo.region" content="BR-PR">
+        <meta name="geo.placename" content="Curitiba">
 
         <!-- Open Graph -->
-        <meta property="og:title" content="${metadata.title} | Espaço Pai Laercio">
-        <meta property="og:description" content="${metadata.description}">
-        <meta property="og:url" content="${canonical}">
+        <meta property="og:title" content="${escapeAttribute(metadata.title)} | Espaço Pai Laércio">
+        <meta property="og:description" content="${escapeAttribute(metadata.description)}">
+        <meta property="og:url" content="${escapeAttribute(canonical)}">
         <meta property="og:type" content="website">
-        <meta property="og:image" content="https://img.supremamidia.com/suprema-img.png">
         
         <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="${metadata.title} | Espaço Pai Laercio">
-        <meta name="twitter:description" content="${metadata.description}">
-        <meta name="twitter:image" content="https://img.supremamidia.com/suprema-img.png">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="${escapeAttribute(metadata.title)} | Espaço Pai Laércio">
+        <meta name="twitter:description" content="${escapeAttribute(metadata.description)}">
         
         <meta name="robots" content="index, follow">
         

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const faqs = [
   {
@@ -33,6 +34,7 @@ const faqs = [
 
 export const FAQAccordion: React.FC = () => (
   <section id="perguntas" className="py-20 bg-stone-50">
+    <Helmet><script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })) })}</script></Helmet>
     <div className="max-w-4xl mx-auto px-4">
       <h2 className="text-4xl font-bold mb-8 text-stone-900">Perguntas frequentes</h2>
       <div className="space-y-4">

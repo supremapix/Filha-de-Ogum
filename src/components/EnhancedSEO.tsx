@@ -47,7 +47,7 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
         "@type": "Offer", "itemOffered": { "@type": "Service", name }
       }))
     },
-    "sameAs": ["https://www.espacopailaercio.com.br"],
+    "sameAs": ["https://www.espacopailaercio.com.br/", "https://www.instagram.com/centro.sagrado/", "https://www.facebook.com/Pailaercio/", "https://www.youtube.com/@CENTROSAGRADO", "https://www.tiktok.com/@centro.sagrado", "https://www.tiktok.com/@pailaercio"],
     "description": "Orientação espiritual, amarração amorosa, união de casais e limpeza espiritual. Atendimento presencial em Curitiba e online."
   };
 

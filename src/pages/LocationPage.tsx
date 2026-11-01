@@ -84,7 +84,7 @@ const LocationPage: React.FC = () => {
             {seoTexts.map((text, index) => (
               <motion.article 
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="bg-white p-8 rounded-3xl border border-stone-100 shadow-sm hover:shadow-md transition-all"

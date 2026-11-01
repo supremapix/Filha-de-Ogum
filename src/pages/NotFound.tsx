@@ -14,7 +14,7 @@ const NotFound: React.FC = () => {
       />
       
       <motion.div 
-        initial={{ opacity: 0, y: 20 }}
+        initial={false}
         animate={{ opacity: 1, y: 0 }}
         className="max-w-md w-full text-center"
       >

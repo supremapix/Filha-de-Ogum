@@ -14,7 +14,8 @@ export const ContactCard: React.FC = () => {
           <p className="hero-eyebrow">Centro Sagrado Coração de Jesus</p>
           <h2 id="contact-card-title">Fale com Pai Laércio{place ? ` sobre atendimento para ${place.name}` : ''}</h2>
           <p>Converse sobre consultas espirituais, jogo de búzios, cartas e limpeza espiritual. O atendimento presencial acontece no Jardim Social, em Curitiba, com hora marcada. Há também atendimento online.</p>
-          <p>Peça informações sobre valores, disponibilidade e como funciona o serviço antes de agendar.</p>
+          <p><strong>Entenda antes de decidir.</strong> Pergunte como funciona o atendimento, quais são os valores e o que está incluído. Escolha o próximo passo somente depois de esclarecer suas dúvidas.</p>
+          <p>Use os canais oficiais abaixo. Se preferir conversar em vez de escrever, toque em “Ligar”.</p>
           <div className="hero-actions">
             <a className="primary-action" href="https://wa.me/5541984679910"><MessageCircle aria-hidden="true" /> WhatsApp: (41) 98467-9910</a>
             <a className="secondary-action" href="tel:+554132228276"><Phone aria-hidden="true" /> Ligar: (41) 3222-8276</a>

@@ -12,6 +12,8 @@ import { AttendanceGuide } from '../components/AttendanceGuide';
 
 const Home: React.FC = () => {
   const currentLocation = useLocation();
+  const [clientReady, setClientReady] = React.useState(false);
+  React.useEffect(() => setClientReady(true), []);
   const [searchTerm, setSearchTerm] = React.useState('');
 
   const normalizeSearch = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLowerCase();
@@ -57,7 +59,7 @@ const Home: React.FC = () => {
       <section id="servicos" className="py-12 bg-stone-50 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-black text-stone-900 uppercase tracking-tighter"
@@ -306,6 +308,7 @@ const Home: React.FC = () => {
           </div>
           
           <p className="mb-6">Ao continuar, você abrirá o WhatsApp para conferir e enviar sua mensagem.</p>
+          <noscript><p>Para enviar uma mensagem, use os links de telefone ou WhatsApp acima. O formulário requer JavaScript.</p></noscript>
           <form 
             onSubmit={(e) => {
               e.preventDefault();
@@ -318,6 +321,7 @@ const Home: React.FC = () => {
             }}
             className="space-y-6 bg-stone-800 p-10 rounded-[2.5rem] border border-stone-700 shadow-2xl"
           >
+            <fieldset disabled={!clientReady} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">
                 <label htmlFor="contact-name" className="text-lg font-bold text-stone-300">Seu nome</label>
@@ -353,6 +357,7 @@ const Home: React.FC = () => {
               <MessageCircle size={32} />
               Continuar no WhatsApp
             </button>
+            </fieldset>
           </form>
         </div>
       </section>

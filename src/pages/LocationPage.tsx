@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ALL_LOCATIONS } from '../data/locations';
 import { EnhancedSEO } from '../components/EnhancedSEO';
-import { MapPin, Heart, Star, Shield, Zap, MessageCircle, Phone } from 'lucide-react';
+import { Heart, Star, Shield, MessageCircle, Phone } from 'lucide-react';
 import { motion } from 'motion/react';
 import { FAQAccordion } from '../components/FAQAccordion';
 
@@ -15,18 +15,13 @@ const LocationPage: React.FC = () => {
     return <Navigate to="/" />;
   }
 
-  const stateNames: Record<string, string> = {
-    'PR': 'Paraná',
-    'SC': 'Santa Catarina',
-    'RS': 'Rio Grande do Sul',
-    'GO': 'Goiás',
-    'DF': 'Distrito Federal'
-  };
-  const stateName = stateNames[location.state || 'PR'];
-
   const seoTexts = [
     { title: `Orientação espiritual para quem está em ${location.name}`, content: `O Espaço Pai Laércio oferece atendimento online para pessoas em ${location.name}. O atendimento presencial é realizado em Curitiba, na Rua Frei Orlando, 437, Jardim Social. Entre em contato para saber como funciona a consulta e esclarecer suas dúvidas.` },
-    { title: 'Serviços e consulta', content: 'Conheça os serviços de amarração amorosa, união de casais e limpeza espiritual. Converse sobre sua situação e solicite informações sobre cada serviço antes de decidir.' },
+    { title: 'Quanto custa e o que está incluído?', content: 'Antes de agendar, peça o valor da consulta, a duração e as condições de remarcação. Pergunte se um trabalho espiritual é opcional, se tem cobrança separada e se há retorno incluído. Solicite essas condições por escrito e escolha sem comprometer despesas essenciais.' },
+    { title: 'Quero reconciliação, mas recebi uma recusa', content: 'Uma possível reaproximação depende da vontade de ambas as pessoas. Se houve recusa ou bloqueio, não insista usando outros números, perfis ou terceiros. Na consulta, você pode conversar sobre suas próprias escolhas e crenças, sem tentar controlar sentimentos alheios.' },
+    { title: 'Como organizar uma consulta online?', content: 'Confirme o canal oficial, o horário combinado e como será feita a conversa. Escolha um ambiente onde tenha privacidade e verifique sua conexão. Pergunte o que acontece se houver queda de internet e como funciona o reagendamento antes de efetuar qualquer pagamento.' },
+    { title: 'O que compartilhar no primeiro contato?', content: 'Comece pelas dúvidas sobre o serviço e a modalidade de atendimento. Não envie fotos íntimas, senhas, documentos ou conversas de outras pessoas. Pergunte por que uma informação é necessária, quem terá acesso a ela e como solicitar que deixe de ser utilizada.' },
+    { title: 'Preciso ir até Curitiba?', content: `Esta página orienta pessoas de ${location.name}; ela não anuncia uma filial nessa localidade. O endereço presencial informado é Rua Frei Orlando, 437, Jardim Social, Curitiba. Confirme disponibilidade, horário e acessibilidade antes de planejar o deslocamento. Para evitar uma viagem desnecessária, pergunte se sua dúvida pode ser tratada online.` },
     { title: 'Sem promessa de resultados', content: 'Práticas espirituais envolvem crenças pessoais. Não há garantia de reconciliação, de mudança de comportamento de outra pessoa ou de prazo para resultados. As escolhas e a autonomia de todas as pessoas devem ser respeitadas.' }
   ];
 
@@ -34,7 +29,7 @@ const LocationPage: React.FC = () => {
     <div className="pb-20">
       <EnhancedSEO 
         title={`Amarração Amorosa em ${location.name} - Espaço Pai Laércio`}
-        description={`Precisa de Amarração Amorosa em ${location.name}? Espaço Pai Laércio é especialista em união de casais e alta magia em ${location.name} e todo o estado de ${stateName}. Atendimento online e presencial em Curitiba.`}
+        description={`Orientação espiritual para pessoas em ${location.name}: consulta online, custos, privacidade e dúvidas sobre reconciliação. Sede presencial em Curitiba, sem filial local anunciada.`}
         canonical={`https://www.amarracaoamorosacuritiba.shop/local/${location.id}`}
         locationName={location.name}
         state={location.state}
@@ -55,8 +50,8 @@ const LocationPage: React.FC = () => {
           </Link>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Amarração Amorosa em <span className="text-red-500">{location.name}</span></h1>
           <p className="text-xl text-stone-400 max-w-3xl leading-relaxed">
-            Trabalho espiritual focado em fortalecer vínculos afetivos e aproximar duas pessoas com orientação especializada em {location.name}. 
-            Atendimento discreto e personalizado para quem busca reconciliação amorosa com Pai Laércio.
+            Informações para quem está em {location.name} e procura orientação espiritual sobre a vida afetiva.
+            Conheça as condições da consulta online ou presencial em Curitiba, os cuidados com a privacidade e os limites de qualquer promessa de reconciliação.
           </p>
         </div>
       </section>
@@ -68,7 +63,7 @@ const LocationPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8">
           <a href="https://wa.me/5541984679910" className="max-w-full text-center justify-center flex items-center gap-4 px-10 py-5 bg-green-600 text-white rounded-full font-black text-2xl hover:bg-green-700 transition-all shadow-2xl shadow-green-200 border-b-8 border-green-800 active:border-b-0 active:translate-y-2">
             <MessageCircle size={32} />
-            WHATSAPP {location.name.toUpperCase()}
+            CONSULTAR ATENDIMENTO
           </a>
           <a href="tel:+554132228276" className="max-w-full text-center justify-center flex items-center gap-4 px-10 py-5 bg-stone-900 text-white rounded-full font-black text-2xl hover:bg-stone-800 transition-all shadow-2xl border-b-8 border-stone-950 active:border-b-0 active:translate-y-2">
             <Phone size={32} />
@@ -99,7 +94,7 @@ const LocationPage: React.FC = () => {
                   {text.content}
                 </p>
                 <div className="mt-6 pt-6 border-t border-stone-50 flex items-center justify-between">
-                  <span className="text-xs font-bold text-stone-400 uppercase tracking-widest">Serviço Especializado</span>
+                  <span className="text-xs font-bold text-stone-600 uppercase tracking-widest">Informação para decidir</span>
                   <Link to="/" className="text-red-700 text-xs font-bold hover:underline">Saiba Mais</Link>
                 </div>
               </motion.article>
@@ -135,3 +130,4 @@ const LocationPage: React.FC = () => {
 };
 
 export default LocationPage;
+

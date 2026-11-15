@@ -1,5 +1,5 @@
 import React from 'react';
-import { ALL_LOCATIONS } from '../data/locations';
+import { ALL_LOCATIONS, OTHER_STATE_LOCATIONS } from '../data/locations';
 import { Link, useLocation } from 'react-router-dom';
 import { MapPin, Star, ShieldCheck, Zap, MessageCircle, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -361,8 +361,17 @@ const Home: React.FC = () => {
           </form>
         </div>
       </section>
+
+      <section className="max-w-7xl mx-auto px-4 py-12" aria-label="Outras localidades com atendimento online">
+        <h2 className="text-2xl font-bold mb-4">Outras localidades: consulta online</h2>
+        <p className="text-stone-600 mb-6">As páginas abaixo orientam visitantes de outros estados. A sede presencial fica em Curitiba; não há filial anunciada nessas cidades.</p>
+        <ul className="grid gap-3 sm:grid-cols-2">
+          {OTHER_STATE_LOCATIONS.map(loc => <li key={loc.id}><Link className="block p-3 border rounded-lg underline text-red-800" to={`/local/${loc.id}`}>{loc.name} — {loc.state}</Link></li>)}
+        </ul>
+      </section>
     </div>
   );
 };
 
 export default Home;
+

@@ -1,8 +1,10 @@
+export type StateCode = 'PR' | 'SC' | 'RS' | 'GO' | 'DF' | 'SP' | 'BA' | 'TO' | 'RJ';
+
 export interface Location {
   id: string;
   name: string;
   type: 'bairro' | 'cidade';
-  state?: 'PR' | 'SC' | 'RS' | 'GO' | 'DF';
+  state?: StateCode;
 }
 
 export const NEIGHBORHOODS: string[] = [
@@ -55,7 +57,7 @@ export const CITIES_DF: string[] = [
   "Brasília"
 ];
 
-export const ALL_LOCATIONS: Location[] = [
+const ORIGINAL_LOCATIONS: Location[] = [
   ...NEIGHBORHOODS.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'bairro' as const, state: 'PR' as const })),
   ...CITIES_PR.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'cidade' as const, state: 'PR' as const })),
   ...CITIES_SC.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'cidade' as const, state: 'SC' as const })),
@@ -63,3 +65,21 @@ export const ALL_LOCATIONS: Location[] = [
   ...CITIES_GO.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'cidade' as const, state: 'GO' as const })),
   ...CITIES_DF.map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""), name, type: 'cidade' as const, state: 'DF' as const }))
 ];
+
+
+// Geographic corrections verified against IBGE Cidades e Estados, 2026-11-15.
+// Preserve original IDs and route order; colliding names need separate review.
+const VERIFIED_STATES: Record<string, StateCode> = {
+  botucatu: 'SP',
+  eunapolis: 'BA',
+  araguaina: 'TO',
+  mangaratiba: 'RJ',
+};
+export const ALL_LOCATIONS: Location[] = ORIGINAL_LOCATIONS.map(location =>
+  location.type === 'cidade' && VERIFIED_STATES[location.id]
+    ? { ...location, state: VERIFIED_STATES[location.id] }
+    : location
+);
+export const OTHER_STATE_LOCATIONS = ALL_LOCATIONS.filter(location =>
+  location.type === 'cidade' && ['SP', 'BA', 'TO', 'RJ'].includes(location.state || '')
+);

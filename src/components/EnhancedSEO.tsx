@@ -1,4 +1,5 @@
 import React from 'react';
+import type { StateCode } from '../data/locations';
 import { Helmet } from 'react-helmet-async';
 
 interface EnhancedSEOProps {
@@ -6,7 +7,7 @@ interface EnhancedSEOProps {
   description: string;
   canonical: string;
   locationName?: string;
-  state?: 'PR' | 'SC' | 'RS' | 'GO' | 'DF';
+  state?: StateCode;
   type?: 'website' | 'article' | 'business';
   noIndex?: boolean;
 }
@@ -102,3 +103,4 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
     </Helmet>
   );
 };
+

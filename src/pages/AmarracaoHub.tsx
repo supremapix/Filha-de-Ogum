@@ -30,11 +30,11 @@ export default function AmarracaoHub() {
       <p><strong>Resposta breve:</strong> amarração amorosa é um termo usado em práticas espirituais ligadas ao afeto. Buscar orientação pode ser uma forma de refletir sobre o que você está vivendo. Não há promessa de reconciliação, prazo ou controle sobre sentimentos de outra pessoa.</p>
       <div className="hero-actions"><a className="primary-action" href="https://wa.me/5541984679910">Tirar dúvidas no WhatsApp</a><Link className="secondary-action" to="/links">Conferir canais oficiais</Link></div>
     </section>
-    <nav aria-label="Neste guia" className="rounded-2xl border border-stone-200 bg-white p-4 sm:p-6 mb-8">
+    <nav aria-label="Neste guia" className="mx-auto mb-8 max-w-[950px] rounded-2xl border border-stone-200 bg-white p-4 sm:p-6">
       <h2 className="text-xl font-bold mb-2">Encontre a resposta que procura</h2>
       <ul className="flex flex-wrap gap-2">{topics.map(topic => <li key={topic.id}><a className="inline-flex min-h-11 items-center rounded-lg px-3 py-2 text-red-800 underline" href={'#'+topic.id}>{topic.title}</a></li>)}<li><a className="inline-flex min-h-11 items-center px-3 py-2 text-red-800 underline" href="#perguntas-guia">Perguntas frequentes</a></li></ul>
     </nav>
-    <div className="grid gap-4 md:grid-cols-3">{topics.map(topic => <section key={topic.id} id={topic.id} className="scroll-mt-28 rounded-2xl border border-stone-200 bg-white p-5 sm:p-6"><h2 className="text-xl font-bold mb-3">{topic.title}</h2><p className="leading-relaxed">{topic.text}</p></section>)}</div>
+    <div className="mx-auto grid max-w-[950px] gap-4 md:grid-cols-3">{topics.map(topic => <section key={topic.id} id={topic.id} className="scroll-mt-28 rounded-2xl border border-stone-200 bg-white p-5 sm:p-6"><h2 className="text-xl font-bold mb-3">{topic.title}</h2><p className="leading-relaxed">{topic.text}</p></section>)}</div>
     <section className="links-intro my-8" aria-labelledby="consulta-laercio">
       <h2 id="consulta-laercio">O que perguntar antes de uma consulta em Curitiba</h2>
       <p>Você pode explicar a situação sem enviar documentos, fotos íntimas ou informações de outra pessoa. Use somente os canais oficiais do Espaço Pai Laércio. Confirme a disponibilidade, o local e o que fica combinado antes de agendar.</p>
@@ -42,7 +42,7 @@ export default function AmarracaoHub() {
       <p>Moradores de Curitiba e da região metropolitana podem usar os mesmos canais para confirmar as opções disponíveis. A orientação espiritual não substitui ajuda psicológica, médica ou especializada quando necessária.</p>
       <p><Link className="inline-flex min-h-11 items-center text-red-800 underline" to="/local/curitiba">Ver informações do atendimento em Curitiba</Link></p>
     </section>
-    <section id="perguntas-guia" className="scroll-mt-28 mb-8" aria-labelledby="faq-amarracao">
+    <section id="perguntas-guia" className="mx-auto mb-8 max-w-[950px] scroll-mt-28" aria-labelledby="faq-amarracao">
       <h2 id="faq-amarracao" className="text-2xl font-bold mb-4">Perguntas frequentes</h2>
       <div className="grid gap-3">{questions.map(([question, answer]) => <details key={question} className="rounded-xl border border-stone-200 bg-white px-4"><summary className="min-h-11 py-3 font-bold cursor-pointer">{question}</summary><p className="pb-4 leading-relaxed">{answer}</p></details>)}</div>
     </section>

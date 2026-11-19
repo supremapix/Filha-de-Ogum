@@ -21,6 +21,14 @@
       "destination": "/sitemap/index.html"
     },
     {
+      "source": "/amarracao-amorosa",
+      "destination": "/amarracao-amorosa/index.html"
+    },
+    {
+      "source": "/amarracao-amorosa/",
+      "destination": "/amarracao-amorosa/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/spa.html"
     }

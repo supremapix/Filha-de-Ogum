@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import LocationPage from './pages/LocationPage';
 import Sitemap from './pages/Sitemap';
 import Links from './pages/Links';
+import AmarracaoHub from './pages/AmarracaoHub';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -14,7 +15,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Home />} />
           <Route path="/servicos" element={<Home />} />
-          <Route path="/amarracao-amorosa" element={<Home />} />
+          <Route path="/amarracao-amorosa" element={<AmarracaoHub />} />
           <Route path="/contato" element={<Home />} />
           <Route path="/depoimentos" element={<Home />} />
           <Route path="/agendar" element={<Home />} />

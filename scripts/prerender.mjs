@@ -10,7 +10,7 @@ try {
   const { renderPage } = createRequire(import.meta.url)(entry);
   const template = fs.readFileSync(path.join(root, 'dist/index.html'), 'utf8');
   fs.writeFileSync(path.join(root, 'dist/spa.html'), template);
-  for (const route of ['/', '/links', '/sitemap']) {
+  for (const route of ['/', '/links', '/sitemap', '/amarracao-amorosa']) {
     const rendered = renderPage(route);
     const html = template.replace('<!-- SEO_PLACEHOLDER -->', rendered.head).replace('<div id="root"></div>', () => `<div id="root">${rendered.body}</div>`);
     const directory = route === '/' ? 'dist' : `dist${route}`;

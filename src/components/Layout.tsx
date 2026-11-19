@@ -8,7 +8,7 @@ import { OfficialVideo } from './OfficialVideo';
 import { ShareActions } from './ShareActions';
 import { ContactCard } from './ContactCard';
 
-const navigation = [ ['/', 'Início'], ['/#servicos', 'Serviços'], ['/#locais', 'Onde atendemos'], ['/#perguntas', 'Dúvidas'], ['/#contato', 'Contato'], ['/links', 'Canais oficiais'] ];
+const navigation = [ ['/', 'Início'], ['/#servicos', 'Serviços'], ['/amarracao-amorosa', 'Guia amoroso'], ['/#locais', 'Onde atendemos'], ['/#perguntas', 'Dúvidas'], ['/#contato', 'Contato'], ['/links', 'Canais oficiais'] ];
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
@@ -71,6 +71,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <p>Atendimento com hora marcada.<br />Confirme a disponibilidade pelo WhatsApp.</p>
             <nav aria-label="Navegação do rodapé">
               <Link to="/#servicos">Ver serviços</Link>
+              <Link to="/amarracao-amorosa">Guia de amarração amorosa</Link>
               <Link to="/#perguntas">Perguntas frequentes</Link>
               <Link to="/links">Links e canais oficiais</Link>
               <Link to="/sitemap">Mapa do site</Link>

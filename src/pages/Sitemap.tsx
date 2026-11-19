@@ -22,7 +22,7 @@ const Sitemap: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold mb-12 border-b pb-6">Mapa do Site</h1>
         
-        <nav aria-label="Páginas principais" className="mb-10 flex flex-wrap gap-4"><Link className="p-3 underline" to="/">Início</Link><Link className="p-3 underline" to="/links">Links e canais oficiais</Link></nav>
+        <nav aria-label="Páginas principais" className="mb-10 flex flex-wrap gap-4"><Link className="p-3 underline" to="/">Início</Link><Link className="p-3 underline" to="/links">Links e canais oficiais</Link><Link className="p-3 underline" to="/amarracao-amorosa">Guia de amarração amorosa</Link></nav>
         <div className="space-y-20">
           <div>
             <h2 className="text-2xl font-bold mb-8 flex items-center gap-2 text-red-700">

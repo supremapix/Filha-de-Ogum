@@ -13,6 +13,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const location = useLocation();
+  const isLoveGuide = location.pathname.replace(/\/$/, '') === '/amarracao-amorosa';
   useEffect(() => {
     setMenuOpen(false);
     if (location.hash) {
@@ -47,8 +48,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           </nav>
         </div>
       </header>
-      {location.pathname !== '/' && <ReflectionCard />}
-      <main id="conteudo" tabIndex={-1}>{children}<ClaritySupport /><ReflectionQuiz /><OfficialVideo /><ContactCard /></main>
+      {location.pathname !== '/' && !isLoveGuide && <ReflectionCard />}
+      <main id="conteudo" tabIndex={-1}>{children}{isLoveGuide && <ReflectionCard />}<ClaritySupport /><ReflectionQuiz /><OfficialVideo /><ContactCard /></main>
       <footer className="site-footer" id="rodape">
         <div className="footer-grid">
           <section>
